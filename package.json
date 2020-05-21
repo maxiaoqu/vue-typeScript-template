@@ -6,10 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build:mp": "cross-env MP_ENV=miniprogram vue-cli-service build --mode production --dest ./dist/mp/miniprogram/common",
-    "serve:mp": "yarn mp",
-    "mp": "cross-env MP_ENV=miniprogram vue-cli-service build --mode development --dest ./dist/mp/miniprogram/common --watch"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -35,7 +32,6 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "typescript": "~3.5.3",
-    "vue-cli-plugin-kbone": "0.4.2",
     "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
