@@ -1,27 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
-import Admin from '@/views/Admin.vue'
+import router from './setRouter'
+import { baseRoutes } from './routerPath'
 
-Vue.use(VueRouter)
+// 添加参数，避免多次循环导致的错误
+var getRouters
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/admin',
-    name: 'admin',
-    component: Admin
+// 合并当前所有的路由
+const newRouters = (to: any, next: any) => {
+  const routerArr = baseRoutes.concat([])
+  router.addRoutes(routerArr)
+  next({ ...to, replace: true })
+}
+
+// 路由跳转之前
+router.beforeEach((to, from, next) => {
+  if (!getRouters) {
+    getRouters = true
+    newRouters(to, next)
   }
-]
+  if (to.path === '' || to.path === '/') {
+    next({
+      path: '/home'
+    })
+  } else {
+    next()
+  }
+})
+// 路由跳转之后
+router.afterEach((to, from) => {
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
 })
 
 export default router
