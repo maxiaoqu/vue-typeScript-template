@@ -1,19 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { AppState } from './modules/app'
+import { UserState } from './modules/user'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    isAdmin: undefined
-  },
-  mutations: {
-    setIsAdmin (state, isAdmin) {
-      state.isAdmin = isAdmin
-    }
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+Vue.use(Vuex)
+
+export interface RootState {
+  app: AppState
+  user: UserState
+}
+
+export default new Vuex.Store<RootState>({})
