@@ -2,7 +2,7 @@
  * @description 添加axios的请求拦截、响应拦截
  */
 import Axios from 'axios'
-import { dealWithError } from './dealWithError'
+import dealWithError from './dealWithError'
 import { isProduction } from '@/environment/process'
 import baseURL from '@/environment/baseUrl'
 

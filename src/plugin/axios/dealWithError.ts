@@ -3,7 +3,7 @@
  * @param: {Object}[error]发起请求、接口走error时的相关参数
  * @returns: {Object}返回的一些提示语，有利于排除问题的所在
  */
-export const dealWithError = (error) => {
+const dealWithError = (error) => {
   let errorMessage: any = Object.create(null)
   errorMessage.success = error.state || false
   let status = 400
@@ -27,3 +27,5 @@ export const dealWithError = (error) => {
   console.error(errorMessage.data)
   return errorMessage
 }
+
+export default dealWithError

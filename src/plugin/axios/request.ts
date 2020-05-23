@@ -5,7 +5,7 @@
 // axios相关配置【勿动】
 import qs from 'qs'
 import intercept from './intercept'
-import { dealWithError } from './dealWithError'
+import dealWithError from './dealWithError'
 
 // axios引入配置【勿动】
 const axios = intercept
