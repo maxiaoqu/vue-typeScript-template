@@ -1,12 +1,12 @@
 import router from './setRouter'
-import { baseRoutes } from './routerPath'
+import { baseRoutes, indexRoutes, homeRoutes, childRoutes } from './routerPath'
 
 // 添加参数，避免多次循环导致的错误
 var getRouters
 
 // 合并当前所有的路由
 const newRouters = (to: any, next: any) => {
-  const routerArr = baseRoutes.concat([])
+  const routerArr = baseRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes)
   router.addRoutes(routerArr)
   next({ ...to, replace: true })
 }
@@ -19,7 +19,7 @@ router.beforeEach((to, from, next) => {
   }
   if (to.path === '' || to.path === '/') {
     next({
-      path: '/home'
+      path: '/index'
     })
   } else {
     next()

@@ -6,7 +6,6 @@ Vue.use(VueRouter)
 const startRouter: RouteConfig[] = []
 
 const router = new VueRouter({
-  mode: 'history',
   startRouter
 } as RouterOptions)
 
