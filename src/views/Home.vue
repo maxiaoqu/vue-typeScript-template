@@ -54,6 +54,10 @@ export default class Home extends Vue {
 <style lang="scss">
   .home {
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
+
+    button {
+      font-size: 20px;
+    }
   }
 </style>

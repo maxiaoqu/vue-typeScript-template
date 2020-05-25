@@ -39,5 +39,8 @@ export default class Admin extends Vue {
   .admin {
     text-align: center;
     padding-top: 200px;
+    button{
+      font-size: 30px;
+    }
   }
 </style>

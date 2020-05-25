@@ -18,6 +18,23 @@ module.exports = {
       }
     }
   },
+  // 使用postcss-pxtorem配合utils/rem将项目中的px转化成rem
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          require('postcss-pxtorem')({
+            rootValue: 37.5,
+            selectorBlackList: [],
+            propList: ['*'],
+            replace: true,
+            mediaQuery: true,
+            minPixelValue: 3
+          })
+        ]
+      }
+    }
+  },
   devServer: {
     port: 1024,
     host: 'localhost',
