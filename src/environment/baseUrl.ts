@@ -1,4 +1,4 @@
-import { environment } from './environment'
+import { isProduction } from '@/environment/process'
 
 // 运行环境【运行后台人员联调环境】----【运行：npm run dev】
 const development = {
@@ -16,6 +16,6 @@ const production = {
   fip: 'http://server.maxiaoqu.com:9999' // 文件上传接口
 }
 
-const baseURL = environment === 'development' ? development : production
+const baseURL = isProduction ? development : production
 
 export default baseURL
