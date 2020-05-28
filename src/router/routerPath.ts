@@ -4,6 +4,30 @@ import Index from '@/layout/index.vue'
 import Home from '@/layout/home.vue'
 import Child from '@/layout/child.vue'
 
+// Oidc页面路由
+export const oidcRoutes: RouteConfig[] = [{
+  path: '/OidcCallback',
+  name: 'OidcCallback',
+  meta: {
+    title: '首页'
+  },
+  component: () => import('@/views/oidc/OidcCallback.vue')
+}, {
+  path: '/OidcCallbackError',
+  name: 'OidcCallbackError',
+  meta: {
+    title: '登录页'
+  },
+  component: () => import('@/views/oidc/OidcCallbackError.vue')
+}, {
+  path: '/OidcSilentRenew',
+  name: 'OidcSilentRenew',
+  meta: {
+    title: '注册页'
+  },
+  component: () => import('@/views/oidc/OidcSilentRenew.vue')
+}]
+
 // 基础页面路由
 export const baseRoutes: RouteConfig[] = [{
   path: '/index',
