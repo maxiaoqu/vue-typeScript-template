@@ -21,7 +21,7 @@ class User extends VuexModule implements UserState {
   public userId = ''
   public userName = ''
 
-  // actions
+  // get
   get getToken() {
     return this.token
   }

@@ -18,7 +18,7 @@ class App extends VuexModule implements AppState {
   // state
   public size = 'large' || 'medium'
 
-  // actions
+  // get
   get getSize() {
     return this.size
   }
