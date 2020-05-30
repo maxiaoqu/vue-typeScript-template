@@ -2,14 +2,9 @@ import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-dec
 import store from '@/store'
 
 export interface UserState {
-  'access_token': null,
-  'id_token': null,
-  'refresh_token': null,
-  'user': null,
-  'scopes': null,
-  'is_checked': false,
-  'events_are_bound': false,
-  'error': null
+  user: null,
+  scopes: null,
+  error: null
 }
 
 /*
@@ -22,42 +17,37 @@ export interface UserState {
 @Module({ name: 'user', dynamic: true, namespaced: true, store })
 class User extends VuexModule implements UserState {
   // state
-  public 'access_token' = null
-  public 'id_token' = null
-  public 'refresh_token' = null
-  public 'user' = null
-  public 'scopes' = null
-  public 'is_checked': false
-  public 'events_are_bound' = false
-  public 'error' = null
+  public user = null
+  public scopes = null
+  public error = null
 
   // get
   get getToken() {
-    return this.token
+    return this.user
   }
 
   get getUserId() {
-    return this.userId
+    return this.scopes
   }
 
   get getUserName() {
-    return this.userName
+    return this.error
   }
 
   // mutations
   @Mutation
   private SET_TOKEN(token: string) {
-    this.token = token
+    this.user = token
   }
 
   @Mutation
   private SET_USERID(uid: string) {
-    this.userId = uid
+    this.scopes = uid
   }
 
   @Mutation
   private SET_USERNAME(name: string) {
-    this.userName = name
+    this.error = name
   }
 
   // actions
