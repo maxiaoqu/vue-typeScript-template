@@ -17,7 +17,13 @@ router.beforeEach((to, from, next) => {
     getRouters = true
     newRouters(to, next)
   }
-  if (to.path === '' || to.path === '/') {
+
+  if (to.path !== '/OidcCallback' && !localStorage.getItem('token')) {
+    console.log(9999, 888)
+    next({
+      path: '/OidcCallback'
+    })
+  } else if (to.path === '' || to.path === '/') {
     next({
       path: '/index'
     })

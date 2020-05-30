@@ -2,18 +2,17 @@
  * @description: 接收到返回数据时的处理
 */
 
-import Oidc from 'oidc-client'
+import oidcEvents from '@/plugin/oidc/oidcEvents'
 
 const oidcManager = () => {
-  let manager = new Oidc.UserManager({ response_mode: 'query' })
-  manager
+  oidcEvents
     .signinRedirectCallback()
     .then((res) => {
       let user = res.profile.name
       if (user === 'screen') {
-        window.location.href = '../#/dpIndex/dataCenterDP'
+        window.location.href = '../#/index'
       } else {
-        window.location.href = '../#/pcIndex/dataCenterPC'
+        window.location.href = '../#/login'
       }
     })
     .catch((e) => {
