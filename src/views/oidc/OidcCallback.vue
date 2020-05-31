@@ -14,7 +14,9 @@ export default class OidcCallback extends Vue {
     oidcEvents.signinRedirectCallback()
       .then(function(res) {
         localStorage.setItem('token', res.id_token)
-        console.log(9999, 8888, res)
+        if (res.id_token) {
+          window.location.href = '/'
+        }
       })
       .catch(function(err) {
         console.error(err)

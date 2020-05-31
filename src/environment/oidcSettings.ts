@@ -1,5 +1,7 @@
 import { isProduction } from '@/environment/process'
 
+const nodeEnvPort = require('@/environment/nodeEvnt.ts').port
+
 /*
 * authority: 认证服务器,需要修改为自己的认证服务器
 * client_id: 客户端 id ,按照约定修改即可
@@ -12,9 +14,9 @@ const development = {
   // 公司环境
   // authority: 'http://139.224.255.200:3010',
   // client_id: 'cockpit-vue',
-  // redirect_uri: 'http://localhost:8100/#/oidc-callback',
-  // post_logout_redirect_uri: 'http://localhost:8100/#/oidc-logout',
-  // silent_redirect_uri: 'http://localhost:8100/#/oidc-silent-renew',
+  // redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
+  // post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
+  // silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
   // response_type: 'code',
   // scope: 'openid profile offline_access vue.api',
   // automaticSilentRenew: true,
@@ -23,9 +25,9 @@ const development = {
   // 其他测试环境
   authority: 'https://demo.identityserver.io/',
   client_id: 'interactive.public',
-  redirect_uri: 'http://localhost:1024/#/OidcCallback',
-  post_logout_redirect_uri: 'http://localhost:1024/#/OidcCallback',
-  silent_redirect_uri: 'http://localhost:1024/#/OidcCallback',
+  redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
+  post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
+  silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
   response_type: 'code',
   scope: 'openid profile email api offline_access',
   automaticSilentRenew: true,

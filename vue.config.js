@@ -1,3 +1,4 @@
+const nodeEnvPort = require('./src/environment/nodeEvnt.ts').port
 const consoleInfo = require('./console')
 
 module.exports = {
@@ -36,7 +37,7 @@ module.exports = {
     }
   },
   devServer: {
-    port: 1024,
+    port: nodeEnvPort,
     host: 'localhost',
     https: false,
     open: true
