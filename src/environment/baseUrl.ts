@@ -16,6 +16,6 @@ const production = {
   fip: 'http://server.maxiaoqu.com:9999' // 文件上传接口
 }
 
-const baseURL = isProduction ? development : production
+const baseURL = isProduction ? production : development
 
 export default baseURL

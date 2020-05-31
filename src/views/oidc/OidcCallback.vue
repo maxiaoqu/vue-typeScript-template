@@ -3,23 +3,22 @@
 </template>
 
 <script lang="ts">
-
-import Oidc from 'oidc-client'
 import { Component, Vue } from 'vue-property-decorator'
 import oidcEvents from '@/plugin/oidc/oidcEvents'
 
   @Component({
     name: 'OidcCallback'
   })
-export default class extends Vue {
-  // export default class OidcCallback extends Vue {
+export default class OidcCallback extends Vue {
   mounted() {
-    console.log(111222, oidcEvents)
-    oidcEvents.signinRedirect().then(res => {
-      console.log(111, res)
-    }).catch(err => {
-      console.log(222, err)
-    })
+    oidcEvents.signinRedirectCallback()
+      .then(function(res) {
+        localStorage.setItem('token', res.id_token)
+        console.log(9999, 8888, res)
+      })
+      .catch(function(err) {
+        console.error(err)
+      })
   }
 }
 </script>

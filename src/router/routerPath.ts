@@ -42,7 +42,7 @@ export const baseRoutes: RouteConfig[] = [{
   meta: {
     title: '登录页'
   },
-  component: () => import('@/views/Admin.vue')
+  component: () => import('@/views/login/index.vue')
 }, {
   path: '/register',
   name: 'register',

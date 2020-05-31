@@ -9,13 +9,25 @@ import { isProduction } from '@/environment/process'
 
 // 运行环境【运行后台人员联调环境】----【运行：npm run dev】
 const development = {
-  authority: 'http://139.224.255.200:3010',
-  client_id: 'cockpit-vue',
-  redirect_uri: 'http://localhost:8100/#/oidc-callback',
-  post_logout_redirect_uri: 'http://localhost:8100/#/oidc-logout',
-  silent_redirect_uri: 'http://localhost:8100/#/oidc-silent-renew',
+  // 公司环境
+  // authority: 'http://139.224.255.200:3010',
+  // client_id: 'cockpit-vue',
+  // redirect_uri: 'http://localhost:8100/#/oidc-callback',
+  // post_logout_redirect_uri: 'http://localhost:8100/#/oidc-logout',
+  // silent_redirect_uri: 'http://localhost:8100/#/oidc-silent-renew',
+  // response_type: 'code',
+  // scope: 'openid profile offline_access vue.api',
+  // automaticSilentRenew: true,
+  // automaticSilentSignin: true
+
+  // 其他测试环境
+  authority: 'https://demo.identityserver.io/',
+  client_id: 'interactive.public',
+  redirect_uri: 'http://localhost:1024/#/OidcCallback',
+  post_logout_redirect_uri: 'http://localhost:1024/#/OidcCallback',
+  silent_redirect_uri: 'http://localhost:1024/#/OidcCallback',
   response_type: 'code',
-  scope: 'openid profile offline_access vue.api',
+  scope: 'openid profile email api offline_access',
   automaticSilentRenew: true,
   automaticSilentSignin: true
 }
@@ -33,6 +45,6 @@ const production = {
   automaticSilentSignin: true
 }
 
-const oidcSettings = isProduction ? development : production
+const oidcSettings = isProduction ? production : development
 
 export default oidcSettings
