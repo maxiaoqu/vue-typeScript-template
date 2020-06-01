@@ -6,7 +6,9 @@ var getRouters
 
 // 合并当前所有的路由
 const newRouters = (to: any, next: any) => {
-  const routerArr = oidcRoutes.concat(baseRoutes).concat(indexRoutes).concat(homeRoutes).concat(childRoutes)
+  const routerConfig = oidcRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes)
+  // 因'*'的路由存在baseRoutes里，所以放在最后不会影响其他
+  const routerArr = routerConfig.concat(baseRoutes)
   router.addRoutes(routerArr)
   next({ ...to, replace: true })
 }

@@ -1,35 +1,43 @@
 import { RouteConfig } from 'vue-router'
 
-import Index from '@/layout/index.vue'
-import Home from '@/layout/home.vue'
-import Child from '@/layout/child.vue'
+import Index from '@/frameSkeleton/layout/index.vue'
+import Home from '@/frameSkeleton/layout/home.vue'
+import Child from '@/frameSkeleton/layout/child.vue'
 
 // Oidc页面路由
 export const oidcRoutes: RouteConfig[] = [{
   path: '/OidcCallback',
   name: 'OidcCallback',
   meta: {
-    title: '首页'
+    title: '单点登录回调页面'
   },
-  component: () => import('@/views/oidc/OidcCallback.vue')
+  component: () => import('@/frameSkeleton/oidc/OidcCallback.vue')
 }, {
   path: '/OidcCallbackError',
   name: 'OidcCallbackError',
   meta: {
-    title: '登录页'
+    title: '单点登录回调错误'
   },
-  component: () => import('@/views/oidc/OidcCallbackError.vue')
+  component: () => import('@/frameSkeleton/oidc/OidcCallbackError.vue')
 }, {
   path: '/OidcSilentRenew',
   name: 'OidcSilentRenew',
   meta: {
-    title: '注册页'
+    title: '单点登录回调'
   },
-  component: () => import('@/views/oidc/OidcSilentRenew.vue')
+  component: () => import('@/frameSkeleton/oidc/OidcSilentRenew.vue')
 }]
 
 // 基础页面路由
 export const baseRoutes: RouteConfig[] = [{
+  path: '/',
+  name: '_index',
+  redirect: '/index',
+  meta: {
+    title: '首页'
+  },
+  component: () => import('@/views/Home.vue')
+}, {
   path: '/index',
   name: 'index',
   meta: {
@@ -42,7 +50,7 @@ export const baseRoutes: RouteConfig[] = [{
   meta: {
     title: '登录页'
   },
-  component: () => import('@/views/login/index.vue')
+  component: () => import('@/frameSkeleton/login/index.vue')
 }, {
   path: '/register',
   name: 'register',
@@ -50,6 +58,27 @@ export const baseRoutes: RouteConfig[] = [{
     title: '注册页'
   },
   component: () => import('@/views/Admin.vue')
+}, {
+  path: '/401',
+  name: '401',
+  meta: {
+    title: '401'
+  },
+  component: () => import('@/frameSkeleton/error/error401.vue')
+}, {
+  path: '/403',
+  name: '403',
+  meta: {
+    title: '403'
+  },
+  component: () => import('@/frameSkeleton/error/error403.vue')
+}, {
+  path: '*',
+  name: '404',
+  meta: {
+    title: '404'
+  },
+  component: () => import('@/frameSkeleton/error/error404.vue')
 }]
 
 // 大屏端页面路由

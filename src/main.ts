@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 全局样式
+import '@/assets/style/index.scss'
+
 // 全局组件注册
 import Install from '@/utils/install'
 
