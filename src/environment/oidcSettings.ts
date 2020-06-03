@@ -1,7 +1,7 @@
 import { isProduction } from '@/environment/process'
 
-const nodeEnvPort = require('@/environment/nodeEvnt.ts').port
-
+const nodeEvnt = require('@/environment/nodeEvnt.ts')
+const nodeEnvPort = nodeEvnt.port
 /*
 * authority: 认证服务器,需要修改为自己的认证服务器
 * client_id: 客户端 id ,按照约定修改即可

@@ -1,5 +1,6 @@
-const nodeEnvPort = require('./src/environment/nodeEvnt.ts').port
 const consoleInfo = require('./console')
+const nodeEvnt = require('./src/environment/nodeEvnt.ts')
+const nodeEnvPort = nodeEvnt.port
 
 module.exports = {
   publicPath: './',
