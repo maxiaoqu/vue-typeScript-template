@@ -52,6 +52,13 @@ export const baseRoutes: RouteConfig[] = [{
   },
   component: () => import('@/frameSkeleton/login/index.vue')
 }, {
+  path: '/logout',
+  name: 'logout',
+  meta: {
+    title: '登出页'
+  },
+  component: () => import('@/frameSkeleton/logout/index.vue')
+}, {
   path: '/register',
   name: 'register',
   meta: {

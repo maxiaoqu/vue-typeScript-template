@@ -92,12 +92,8 @@ import OidcService from '@/plugin/oidc'
   })
 export default class Login extends Vue {
   mounted() {
-    if (this.$route.query.type === 'logout') {
-      console.log('退出来到的页面')
-    } else {
-      let authService = new OidcService()
-      authService.oidcSignIn()
-    }
+    let authService = new OidcService()
+    authService.oidcSignOut()
   }
 }
 </script>
