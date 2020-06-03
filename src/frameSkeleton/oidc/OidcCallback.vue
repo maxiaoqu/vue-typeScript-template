@@ -4,23 +4,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import oidcEvents from '@/plugin/oidc/oidcEvents'
+import OidcService from '@/plugin/oidc'
 
   @Component({
     name: 'OidcCallback'
   })
 export default class OidcCallback extends Vue {
   mounted() {
-    oidcEvents.signinRedirectCallback()
-      .then(function(res) {
-        localStorage.setItem('token', res.id_token)
-        if (res.id_token) {
-          window.location.href = '/'
-        }
-      })
-      .catch(function(err) {
-        console.error(err)
-      })
+    let authService = new OidcService()
+    authService.oidcSigninRedirect()
   }
 }
 </script>
