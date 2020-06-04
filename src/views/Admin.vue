@@ -19,9 +19,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  name: 'Admin'
-})
+  @Component({
+    name: 'Admin'
+  })
 export default class Admin extends Vue {
   get isAdmin() {
     return this.$store.state.isAdmin
@@ -39,7 +39,8 @@ export default class Admin extends Vue {
   .admin {
     text-align: center;
     padding-top: 200px;
-    button{
+
+    button {
       font-size: 30px;
     }
   }

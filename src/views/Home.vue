@@ -30,10 +30,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { getProvinceName } from '@/utils/dictionary/provinceInfo'
 
-@Component({
-  name: 'Home'
-})
+  @Component({
+    name: 'Home'
+  })
 export default class Home extends Vue {
   get isAdmin() {
     return this.$store.state.isAdmin
@@ -47,6 +48,15 @@ export default class Home extends Vue {
     this.$router.push({
       name: name
     })
+  }
+
+  mounted() {
+    this.getProvinceNameNow()
+  }
+
+  private getProvinceNameNow() {
+    let provinceName = getProvinceName('320000', true)
+    console.log(999, provinceName)
   }
 }
 </script>
