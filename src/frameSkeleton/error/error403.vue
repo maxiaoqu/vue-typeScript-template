@@ -16,7 +16,7 @@ export default class Error403 extends Vue {
 </script>
 
 <style lang="scss" scoped>
-  .Error403{
+  .Error403 {
     width: 100%;
     height: 100%;
   }

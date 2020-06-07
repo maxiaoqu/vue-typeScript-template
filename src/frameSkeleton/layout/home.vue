@@ -12,9 +12,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  name: 'Home'
-})
+  @Component({
+    name: 'Home'
+  })
 export default class Home extends Vue {
 
 }
