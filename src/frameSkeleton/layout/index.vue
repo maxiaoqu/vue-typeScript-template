@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-  @Component({
+  @Component<Index>({
     name: 'Index'
   })
 export default class Index extends Vue {

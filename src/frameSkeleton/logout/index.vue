@@ -87,10 +87,10 @@
 import { Component, Vue } from 'vue-property-decorator'
 import OidcService from '@/plugin/oidc'
 
-  @Component({
-    name: 'Login'
+  @Component<Logout>({
+    name: 'Logout'
   })
-export default class Login extends Vue {
+export default class Logout extends Vue {
   mounted() {
     let authService = new OidcService()
     authService.oidcSignOut()

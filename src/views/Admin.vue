@@ -19,7 +19,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-  @Component({
+  @Component<Admin>({
     name: 'Admin'
   })
 export default class Admin extends Vue {

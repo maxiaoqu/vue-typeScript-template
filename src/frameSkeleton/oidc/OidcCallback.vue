@@ -6,7 +6,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import OidcService from '@/plugin/oidc'
 
-  @Component({
+  @Component<OidcCallback>({
     name: 'OidcCallback'
   })
 export default class OidcCallback extends Vue {

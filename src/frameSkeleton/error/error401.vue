@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-  @Component({
+  @Component<Error401>({
     name: 'Error401'
   })
 export default class Error401 extends Vue {

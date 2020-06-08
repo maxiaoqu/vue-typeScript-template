@@ -47,7 +47,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import oidcEvents from '@/plugin/oidc/oidcEvents'
 
-  @Component({
+  @Component<Login>({
     name: 'Login'
   })
 export default class Login extends Vue {
