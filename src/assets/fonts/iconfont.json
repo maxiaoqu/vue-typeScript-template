@@ -1,0 +1,86 @@
+{
+  "id": "1861934",
+  "name": "大屏系统总览",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5190100",
+      "name": "定位水滴",
+      "font_class": "dingweishuidi",
+      "unicode": "e7f9",
+      "unicode_decimal": 59385
+    },
+    {
+      "icon_id": "1036577",
+      "name": "-面积",
+      "font_class": "mianji",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "4131624",
+      "name": "房屋 楼座 面性",
+      "font_class": "fangwulouzuomianxing",
+      "unicode": "e83c",
+      "unicode_decimal": 59452
+    },
+    {
+      "icon_id": "5889136",
+      "name": "资产",
+      "font_class": "zichan",
+      "unicode": "e701",
+      "unicode_decimal": 59137
+    },
+    {
+      "icon_id": "6341583",
+      "name": "水厂",
+      "font_class": "shuichang",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6447366",
+      "name": "员工",
+      "font_class": "yuangong",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7019600",
+      "name": "营业厅",
+      "font_class": "yingyeting",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "7385653",
+      "name": "供水-年",
+      "font_class": "gongshui-nian",
+      "unicode": "e89a",
+      "unicode_decimal": 59546
+    },
+    {
+      "icon_id": "8185228",
+      "name": "资产",
+      "font_class": "zichan1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "10183528",
+      "name": "管网",
+      "font_class": "guanwang",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "13233252",
+      "name": "人口",
+      "font_class": "renshu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}

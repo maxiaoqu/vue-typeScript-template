@@ -1,5 +1,5 @@
 const nodeEnv = {
-  port: '8888'
+  port: '2048'
 }
 
 module.exports = nodeEnv
