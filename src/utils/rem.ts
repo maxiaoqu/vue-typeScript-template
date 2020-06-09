@@ -11,7 +11,7 @@ const appPxToRem = (viewHtml: any, appVersion: string, screenHeight: number, dev
 const pcPxToRem = (viewHtml: any, appVersion: string, screenHeight: number, devicePixelRatio: number) => {
   let isWin = appVersion.match(/Windows/gi)
   let isMac = appVersion.match(/Mac/gi)
-  viewHtml.style.fontSize = '20px'
+  viewHtml.style.fontSize = '37.5px'
 }
 
 // 检查并设置当前Webview环境的rem变量

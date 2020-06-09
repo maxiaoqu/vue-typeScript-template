@@ -4,7 +4,7 @@ const nodeEnvPort = nodeEvnt.port
 
 module.exports = {
   publicPath: './',
-  lintOnSave: process.env.NODE_ENV !== 'production',
+  lintOnSave: false,
   outputDir: process.env.outputDir,
   productionSourceMap: false,
   filenameHashing: false,

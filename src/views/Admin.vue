@@ -1,6 +1,9 @@
 <template>
   <div class="admin">
     <div>Admin - {{ isAdmin }}</div>
+    <button @click="logoutSys">
+      退出登录
+    </button>
     <button @click="returnHome('login')">
       返回登录页
     </button>
@@ -18,6 +21,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import OidcService from '@/plugin/oidc'
 
   @Component<Admin>({
     name: 'Admin'
@@ -27,10 +31,15 @@ export default class Admin extends Vue {
     return this.$store.state.isAdmin
   }
 
-  returnHome(name) {
+  private returnHome(name) {
     this.$router.push({
       name: name
     })
+  }
+
+  private logoutSys() {
+    let authService = new OidcService()
+    authService.oidcSignOut()
   }
 }
 </script>
@@ -41,7 +50,8 @@ export default class Admin extends Vue {
     padding-top: 200px;
 
     button {
-      font-size: 30px;
+      font-size: 18px;
+      color: #2db7f5;
     }
   }
 </style>

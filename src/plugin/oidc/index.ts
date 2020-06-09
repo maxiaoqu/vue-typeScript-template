@@ -1,6 +1,7 @@
 /**
  * @description: 处理单点登录的问题
  */
+import { User } from 'oidc-client'
 import oidcEvents from './oidcEvents'
 
 export default class OidcService {
@@ -29,9 +30,17 @@ export default class OidcService {
 
   // 退出登陆
   oidcSignOut() {
+    localStorage.clear()
+    sessionStorage.clear()
+
+    oidcEvents.removeUser().then((reset) => {
+      console.log(1121212, reset)
+    }).catch((err) => {
+      console.error(err)
+    })
+
     oidcEvents.signoutRedirectCallback().then((resp) => {
-      localStorage.clear()
-      sessionStorage.clear()
+      console.log(23232332, resp)
       window.location.href = '/#/login?type=logout'
     }).catch((err) => {
       console.error(err)

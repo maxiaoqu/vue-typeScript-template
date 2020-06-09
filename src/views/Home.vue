@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <div>Hello typeScript</div>
+    <button @click="logoutSys">
+      退出登录
+    </button>
     <button
       type="primary"
       @click="openAdmin('register')"
@@ -30,6 +33,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import OidcService from '@/plugin/oidc'
 
   @Component<Home>({
     name: 'Home'
@@ -49,6 +53,11 @@ export default class Home extends Vue {
     })
   }
 
+  private logoutSys() {
+    let authService = new OidcService()
+    authService.oidcSignOut()
+  }
+
   mounted() {
     console.log(90909)
   }
@@ -61,7 +70,8 @@ export default class Home extends Vue {
     padding-top: 100px;
 
     button {
-      font-size: 20px;
+      font-size: 16px;
+      color: #ff6700;
     }
   }
 </style>
