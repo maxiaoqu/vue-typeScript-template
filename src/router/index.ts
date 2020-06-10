@@ -1,12 +1,12 @@
 import router from './setRouter'
-import { oidcRoutes, baseRoutes, indexRoutes, homeRoutes, childRoutes } from './routerPath'
+import { oidcRoutes, baseRoutes, indexRoutes, homeRoutes, childRoutes, testRoutes } from './routerPath'
 
 // 添加参数，避免多次循环导致的错误
 var getRouters
 
 // 合并当前所有的路由
 const newRouters = (to: any, next: any) => {
-  const routerConfig = oidcRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes)
+  const routerConfig = oidcRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes).concat(testRoutes)
   // 因'*'的路由存在baseRoutes里，所以放在最后不会影响其他
   const routerArr = routerConfig.concat(baseRoutes)
   router.addRoutes(routerArr)
@@ -26,7 +26,8 @@ router.beforeEach((to, from, next) => {
     next({
       path: '/login'
     })
-  } else */ if (to.path === '' || to.path === '/') {
+  } else */
+  if (to.path === '' || to.path === '/') {
     next({
       path: '/index'
     })

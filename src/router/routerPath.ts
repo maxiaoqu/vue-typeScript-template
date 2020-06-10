@@ -159,3 +159,49 @@ export const childRoutes: RouteConfig[] = [
     }]
   }
 ]
+
+// 案例的使用路由（按需删除即可）
+export const testRoutes: RouteConfig[] = [
+  {
+    path: '/testRoutes',
+    name: 'testRoutes',
+    redirect: '/testRoutes/UseComponentsNo1',
+    component: Child,
+    children: [{
+      path: 'UseComponentsNo1',
+      name: 'UseComponentsNo1',
+      meta: {
+        title: '组件使用页面1'
+      },
+      component: () => import('@/viewsTest/useComponents-1.vue')
+    }, {
+      path: 'UseMixins',
+      name: 'UseMixins',
+      meta: {
+        title: 'Mixins方法的使用'
+      },
+      component: () => import('@/viewsTest/useMixins.vue')
+    }, {
+      path: 'UseRequest',
+      name: 'UseRequest',
+      meta: {
+        title: 'Axios请求方法的使用'
+      },
+      component: () => import('@/viewsTest/useRequest.vue')
+    }, {
+      path: 'UseSameMethodsNo1',
+      name: 'UseSameMethodsNo1',
+      meta: {
+        title: '不同页面调去相同方法-1'
+      },
+      component: () => import('@/viewsTest/useSameMethods-1.vue')
+    }, {
+      path: 'UseSameMethodsNo2',
+      name: 'UseSameMethodsNo2',
+      meta: {
+        title: '不同页面调去相同方法-2'
+      },
+      component: () => import('@/viewsTest/useSameMethods-2.vue')
+    }]
+  }
+]

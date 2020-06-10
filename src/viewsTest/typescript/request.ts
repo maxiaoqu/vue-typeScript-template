@@ -1,10 +1,10 @@
-import { comRequestData, comRequestFile } from '@/request'
+import { comRequestData, comRequestFile } from '@/plugin/axios'
 
 // 获取数据
 export const getUserInfo = (param) => {
   let params = param || {}
   const config = {
-    url: '/dataServe/getUserInfo',
+    url: '/dataServer/abc/cba',
     data: params,
     method: 'get'
   }
