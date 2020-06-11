@@ -8,14 +8,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+  import {Component, Vue} from 'vue-property-decorator'
 
   @Component<MyComponentsNo1>({
     name: 'MyComponentsNo1'
   })
-export default class MyComponentsNo1 extends Vue {
+  export default class MyComponentsNo1 extends Vue {
 
-}
+  }
 </script>
 
 <style lang="scss">
