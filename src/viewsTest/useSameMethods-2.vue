@@ -11,21 +11,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import SameMethods from '@/viewsTest/typescript/sameMethods'
+  import {Component, Vue} from 'vue-property-decorator'
+  import SameMethods from '@/viewsTest/typescript/sameMethods'
 
   @Component<UseSameMethodsNo2>({
     name: 'UseSameMethodsNo2',
     mixins: [SameMethods]
   })
-export default class UseSameMethodsNo2 extends Vue {
-  /* 这个可以写不同逻辑的代码 */
+  export default class UseSameMethodsNo2 extends Vue {
+    /* 这个可以写不同逻辑的代码 */
 
-  // 点击事件的方法
-  private no2Cliick() {
-    console.log('点击事件的逻辑')
+    // 点击事件的方法
+    private no2Cliick() {
+      console.log('点击事件的逻辑')
+    }
   }
-}
 </script>
 
 <style lang="scss">

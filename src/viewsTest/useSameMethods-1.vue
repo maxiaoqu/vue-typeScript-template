@@ -8,16 +8,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import SameMethods from '@/viewsTest/typescript/sameMethods'
+  import {Component, Vue} from 'vue-property-decorator'
+  import SameMethods from '@/viewsTest/typescript/sameMethods'
 
   @Component<UseSameMethodsNo1>({
     name: 'UseSameMethodsNo1',
     mixins: [SameMethods]
   })
-export default class UseSameMethodsNo1 extends Vue {
-  /* 这个可以写不同逻辑的代码 */
-}
+  export default class UseSameMethodsNo1 extends Vue {
+    /* 这个可以写不同逻辑的代码 */
+  }
 </script>
 
 <style lang="scss">

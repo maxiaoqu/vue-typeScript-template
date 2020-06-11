@@ -3,13 +3,13 @@
 -->
 <template>
   <div class="UseComponentsNo1">
-    <MyComponentsNo1 />
+    <MyComponentsNo1/>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import MyComponentsNo1 from '@/viewsTest/components/myComponents-1.vue'
+  import {Component, Vue} from 'vue-property-decorator'
+  import MyComponentsNo1 from '@/viewsTest/components/myComponents-1.vue'
 
   @Component<UseComponentsNo1>({
     name: 'UseComponentsNo1',
@@ -17,9 +17,9 @@ import MyComponentsNo1 from '@/viewsTest/components/myComponents-1.vue'
       MyComponentsNo1
     }
   })
-export default class UseComponentsNo1 extends Vue {
+  export default class UseComponentsNo1 extends Vue {
 
-}
+  }
 </script>
 
 <style lang="scss">
