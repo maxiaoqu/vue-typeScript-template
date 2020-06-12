@@ -1,4 +1,4 @@
-import { comRequestData, comRequestFile } from '@/plugin/axios'
+import {comRequestData, comRequestFile} from '@/plugin/axios'
 
 // 获取数据
 export const getUserInfo = (param) => {

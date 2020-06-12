@@ -1,4 +1,4 @@
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import {Component, Prop, Vue} from 'vue-property-decorator'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -16,7 +16,7 @@ declare module 'vue/types/vue' {
 export default class MyMixins extends Vue {
   /* props */
   @Prop(Boolean) public testPropData: boolean
-  @Prop({ type: String, default: '' }) public testPropData2!: string
+  @Prop({type: String, default: ''}) public testPropData2!: string
 
   /* data() */
   // 注意：只能使用public定义，不能使用protected、定义，否则组件内收不到
