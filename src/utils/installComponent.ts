@@ -3,7 +3,7 @@
 * */
 const components = {}
 
-const install = (Vue, opts = {}) => {
+const installComponent = (Vue, opts = {}) => {
   var objArr = Object.keys(components)
   if (objArr.length !== 0) {
     objArr.forEach((key) => {
@@ -11,4 +11,4 @@ const install = (Vue, opts = {}) => {
     })
   }
 }
-export default install
+export default installComponent

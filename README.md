@@ -25,7 +25,7 @@
 
 ## 安装
 ```
-npm install
+npm installComponent
 ```
 
 ## 运行
