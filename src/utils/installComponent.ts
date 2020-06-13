@@ -1,12 +1,13 @@
 /*
-* 全局组件注册
+* 全局方法注册
+* Vue.component('key', components[key])
 * */
 const components = {}
 
 const installComponent = (Vue, opts = {}) => {
-  var objArr = Object.keys(components)
-  if (objArr.length !== 0) {
-    objArr.forEach((key) => {
+  var componentsObjArr = Object.keys(components)
+  if (componentsObjArr.length !== 0) {
+    componentsObjArr.forEach((key) => {
       Vue.component(key, components[key])
     })
   }
