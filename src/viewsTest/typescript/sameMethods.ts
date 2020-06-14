@@ -1,8 +1,10 @@
-import {Component, Prop, Vue} from 'vue-property-decorator'
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    form: Object
+    testNameArr: string[],
+    initEcharts(): void,
+    initEcharts2(): void
   }
 }
 
@@ -16,7 +18,7 @@ declare module 'vue/types/vue' {
 export default class SameMethods extends Vue {
   /* props */
   @Prop(Boolean) public testPropData: boolean
-  @Prop({type: String, default: ''}) public testPropData2!: string
+  @Prop({ type: String, default: '' }) public testPropData2!: string
 
   /* data() */
   // 注意：只能使用public定义，不能使用protected、定义，否则组件内收不到
@@ -33,11 +35,11 @@ export default class SameMethods extends Vue {
   类似：methods
   注意：在本脚本调用的使用private，在组件内调用的，使用public
   */
-  private initEcharts() {
+  initEcharts() {
     this.testNameArr = ['1', '2']
   }
 
-  public initEcharts2() {
+  initEcharts2() {
     console.info('methods')
   }
 }
