@@ -19,10 +19,10 @@ const chooseRequest = (action, config, resolve, reject, filePath) => {
   // 先判断是否是文件上传
   if (filePath) {
     console.info('axios文件操作')
-    return dataRequest(action, config, resolve, reject)
+    return fileRequest(action, config, resolve, reject)
   } else {
     console.info('axios数据操作')
-    return fileRequest(action, config, resolve, reject)
+    return dataRequest(action, config, resolve, reject)
   }
 }
 
