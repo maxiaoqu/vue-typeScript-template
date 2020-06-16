@@ -1,7 +1,7 @@
 const consoleInfo = require('./console')
+const isProduction = process.env.NODE_ENV === 'production'
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const nodeEvnt = require('./src/environment/nodeEvnt.ts')
-const nodeEnvPort = nodeEvnt.port
 
 module.exports = {
   publicPath: './',
@@ -64,9 +64,25 @@ module.exports = {
     }
   },
   devServer: {
-    port: nodeEnvPort,
+    port: nodeEvnt.port,
     host: 'localhost',
     https: false,
-    open: true
+    open: true,
+    proxy: {
+      // 通配【勿动,模拟配置，为了方便联调时的更多的配置】
+      '/maxiaoquServer': {
+        target: 'http://server.maxiaoqu.com/maxiaoquServer',
+        changeOrigin: true,
+        pathRewrite: {
+          '/maxiaoquServer': '/'
+        }
+      },
+
+      // 联调时的跨域【可进行增加和修改】
+      '/userCenter': nodeEvnt.dip,
+
+      // 通用统一验证跨域【只可改IP】
+      '/api': nodeEvnt.dip
+    }
   }
 }
