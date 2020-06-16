@@ -3,8 +3,6 @@
  */
 import Axios from 'axios'
 import dealWithError from './dealWithError'
-import { isProduction } from '@/environment/process'
-import baseURL from '@/environment/baseUrl'
 
 const intercept = Axios
 
@@ -21,11 +19,6 @@ intercept.interceptors.request.use((config) => {
   // 判断是否是json文件，是的话baseURL为空
   if (config.url.includes('.json') || config.url.includes('.g')) {
     config.baseURL = ''
-  } else if (isProduction) {
-    config.baseURL = baseURL.dip
-  } else {
-    // 如果在vue.config.js中配置了proxy的话，就不需要else，注释即可
-    config.baseURL = baseURL.dip
   }
   return config
 }, (error) => {
