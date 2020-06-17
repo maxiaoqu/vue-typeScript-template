@@ -1,8 +1,8 @@
 import { RouteConfig } from 'vue-router'
 
-import Index from '@/basicSkeleton/layout/index.vue'
-import Home from '@/basicSkeleton/layout/home.vue'
-import Child from '@/basicSkeleton/layout/child.vue'
+import Index from '@/frameSkeleton/layout/index.vue'
+import Home from '@/frameSkeleton/layout/home.vue'
+import Child from '@/frameSkeleton/layout/child.vue'
 
 // Oidc页面路由
 export const oidcRoutes: RouteConfig[] = [
@@ -12,21 +12,21 @@ export const oidcRoutes: RouteConfig[] = [
     meta: {
       title: '单点登录回调页面'
     },
-    component: () => import('@/basicSkeleton/oidc/OidcCallback.vue')
+    component: () => import('@/frameSkeleton/oidc/OidcCallback.vue')
   }, {
     path: '/OidcCallbackError',
     name: 'OidcCallbackError',
     meta: {
       title: '单点登录回调错误'
     },
-    component: () => import('@/basicSkeleton/oidc/OidcCallbackError.vue')
+    component: () => import('@/frameSkeleton/oidc/OidcCallbackError.vue')
   }, {
     path: '/OidcSilentRenew',
     name: 'OidcSilentRenew',
     meta: {
       title: '单点登录回调'
     },
-    component: () => import('@/basicSkeleton/oidc/OidcSilentRenew.vue')
+    component: () => import('@/frameSkeleton/oidc/OidcSilentRenew.vue')
   }
 ]
 
@@ -53,7 +53,7 @@ export const baseRoutes: RouteConfig[] = [
     meta: {
       title: '登录页'
     },
-    component: () => import('@/basicSkeleton/login/index.vue')
+    component: () => import('@/frameSkeleton/login/index.vue')
   }, {
     path: '/register',
     name: 'register',
@@ -67,21 +67,21 @@ export const baseRoutes: RouteConfig[] = [
     meta: {
       title: '401'
     },
-    component: () => import('@/basicSkeleton/error/error401.vue')
+    component: () => import('@/frameSkeleton/error/error401.vue')
   }, {
     path: '/403',
     name: '403',
     meta: {
       title: '403'
     },
-    component: () => import('@/basicSkeleton/error/error403.vue')
+    component: () => import('@/frameSkeleton/error/error403.vue')
   }, {
     path: '*',
     name: '404',
     meta: {
       title: '404'
     },
-    component: () => import('@/basicSkeleton/error/error404.vue')
+    component: () => import('@/frameSkeleton/error/error404.vue')
   }
 ]
 
