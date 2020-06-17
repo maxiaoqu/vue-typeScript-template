@@ -1,24 +1,23 @@
-import baseURL from '@/environment/baseUrl'
-import { comRequestData, comRequestFile } from '@/plugin/axios'
+import vm from '@/utils/install/vuePrototype'
 
 // 获取数据
 export const getUserInfo = (param) => {
   let params = param || {}
   const config = {
-    url: baseURL.dip + '/dataServe/getUserInfo',
+    url: vm.$baseURL.dip + '/dataServe/getUserInfo',
     data: params,
     method: 'get'
   }
-  return comRequestData(config)
+  return vm.$comRequestData(config)
 }
 
 // 文件上传
 export const getFileUpdate = (param, filePath) => {
   let params = param || {}
   const config = {
-    url: baseURL.fip + '/fileServe/getFileUpdate',
+    url: vm.$baseURL.fip + '/fileServe/getFileUpdate',
     data: params,
     method: 'get'
   }
-  return comRequestFile(config, filePath)
+  return vm.$comRequestFile(config, filePath)
 }
