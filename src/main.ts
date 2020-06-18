@@ -7,8 +7,8 @@ import store from './store'
 import '@/assets/style/index.scss'
 
 // 全局组件、方法注册
-import installComponent from '@/utils/installComponent'
-import installPrototype from '@/utils/installPrototype'
+import installComponent from '@/utils/install/installComponent'
+import installPrototype from '@/utils/install/installPrototype'
 
 // 设置根节点，将项目中的px转化成rems
 import '@/utils/rem'

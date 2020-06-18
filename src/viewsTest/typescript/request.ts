@@ -1,4 +1,4 @@
-import vm from '@/utils/vuePrototype'
+import vm from '@/utils/install/vuePrototype'
 
 // 获取数据
 export const getUserInfo = (param) => {
