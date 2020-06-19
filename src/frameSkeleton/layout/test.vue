@@ -1,11 +1,11 @@
 <template>
-  <div class="layout home">
+  <div class="layout test">
     <div class="layout-left">
       <router-list />
     </div>
     <div class="layout-right">
       <h4>
-        【后台管理系统】这里是公用菜单、头部
+        【测试页面】这里是公用部分
       </h4>
       <main class="layout-box">
         <router-view />
@@ -18,11 +18,11 @@
 import { Component, Vue } from 'vue-property-decorator'
 import RouterList from '@/frameSkeleton/layout/components/routerList.vue'
 
-  @Component<Home>({
-    name: 'Home',
+  @Component<Test>({
+    name: 'Test',
     components: { RouterList }
   })
-export default class Home extends Vue {
+export default class Test extends Vue {
 
 }
 </script>
@@ -45,8 +45,8 @@ export default class Home extends Vue {
 
       h4 {
         line-height: 80px;
-        color: blueviolet;
-        border-bottom: 1px solid blueviolet;
+        color: #ff6700;
+        border-bottom: 1px solid #ff6700;
       }
     }
   }

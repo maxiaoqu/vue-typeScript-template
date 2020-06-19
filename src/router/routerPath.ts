@@ -3,6 +3,7 @@ import { RouteConfig } from 'vue-router'
 import Index from '@/frameSkeleton/layout/index.vue'
 import Home from '@/frameSkeleton/layout/home.vue'
 import Child from '@/frameSkeleton/layout/child.vue'
+import Test from '@/frameSkeleton/layout/test.vue'
 
 // Oidc页面路由
 export const oidcRoutes: RouteConfig[] = [
@@ -33,14 +34,6 @@ export const oidcRoutes: RouteConfig[] = [
 // 基础页面路由
 export const baseRoutes: RouteConfig[] = [
   {
-    path: '/',
-    name: '_index',
-    redirect: '/index',
-    meta: {
-      title: '首页'
-    },
-    component: () => import('@/views/Home.vue')
-  }, {
     path: '/index',
     name: 'index',
     meta: {
@@ -54,13 +47,6 @@ export const baseRoutes: RouteConfig[] = [
       title: '登录页'
     },
     component: () => import('@/frameSkeleton/login/index.vue')
-  }, {
-    path: '/register',
-    name: 'register',
-    meta: {
-      title: '注册页'
-    },
-    component: () => import('@/views/Admin.vue')
   }, {
     path: '/401',
     name: '401',
@@ -90,6 +76,9 @@ export const indexRoutes: RouteConfig[] = [
   {
     path: '/indexRoutes',
     name: 'indexRoutes',
+    meta: {
+      title: '大屏端风格'
+    },
     redirect: '/indexRoutes/Admin1',
     component: Index,
     children: [{
@@ -115,6 +104,9 @@ export const homeRoutes: RouteConfig[] = [
   {
     path: '/homeRoutes',
     name: 'homeRoutes',
+    meta: {
+      title: '后台管理风格'
+    },
     redirect: '/homeRoutes/Admin2',
     component: Home,
     children: [{
@@ -140,6 +132,9 @@ export const childRoutes: RouteConfig[] = [
   {
     path: '/childRoutes',
     name: 'childRoutes',
+    meta: {
+      title: '其他风格'
+    },
     redirect: '/childRoutes/Admin3',
     component: Child,
     children: [{
@@ -165,8 +160,11 @@ export const testRoutes: RouteConfig[] = [
   {
     path: '/testRoutes',
     name: 'testRoutes',
+    meta: {
+      title: '测试页面风格'
+    },
     redirect: '/testRoutes/UseComponentsNo1',
-    component: Child,
+    component: Test,
     children: [{
       path: 'UseComponentsNo1',
       name: 'UseComponentsNo1',
