@@ -52,7 +52,7 @@ module.exports = {
       postcss: {
         plugins: [
           require('postcss-pxtorem')({
-            rootValue: 37.5,
+            rootValue: 16,
             selectorBlackList: [],
             propList: ['*'],
             replace: true,
