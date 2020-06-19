@@ -5,7 +5,9 @@
   <div
     ref="UseMixins"
     class="UseMixins"
-  />
+  >
+    使用Mixins方式的案例页面
+  </div>
 </template>
 
 <script lang="ts">
