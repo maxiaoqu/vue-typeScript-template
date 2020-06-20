@@ -20,7 +20,6 @@ export default class Admin extends Vue {
 <style lang="scss">
   .admin {
     text-align: center;
-    padding-top: 200px;
 
     button {
       font-size: 18px;

@@ -34,6 +34,14 @@ export const oidcRoutes: RouteConfig[] = [
 // 基础页面路由
 export const baseRoutes: RouteConfig[] = [
   {
+    path: '/',
+    name: '_index',
+    redirect: '/index',
+    meta: {
+      title: '首页'
+    },
+    component: () => import('@/views/Home.vue')
+  }, {
     path: '/index',
     name: 'index',
     meta: {
