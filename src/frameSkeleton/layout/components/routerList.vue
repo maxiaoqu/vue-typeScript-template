@@ -54,7 +54,7 @@ export default class RouterList extends Vue {
     }
 
     private gotoPage(router: any) {
-      this.$router.replace({
+      this.$router.push({
         name: router.name
       })
     }
@@ -91,7 +91,7 @@ export default class RouterList extends Vue {
 
     p {
       width: 100%;
-      line-height: 60px;
+      line-height: 40px;
       word-break: keep-all;
       white-space: nowrap;
       overflow: hidden;

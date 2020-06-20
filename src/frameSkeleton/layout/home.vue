@@ -34,7 +34,7 @@ export default class Home extends Vue {
     display: flex;
 
     &-left {
-      width: 460px;
+      width: 320px;
       height: 100%;
     }
 
@@ -44,7 +44,8 @@ export default class Home extends Vue {
       min-width: 0;
 
       h4 {
-        line-height: 80px;
+        font-size: 20px;
+        line-height: 60px;
         color: blueviolet;
         border-bottom: 1px solid blueviolet;
       }

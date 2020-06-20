@@ -34,7 +34,7 @@ export default class Child extends Vue {
     display: flex;
 
     &-left {
-      width: 460px;
+      width: 320px;
       height: 100%;
     }
 
@@ -44,7 +44,8 @@ export default class Child extends Vue {
       min-width: 0;
 
       h4 {
-        line-height: 80px;
+        font-size: 20px;
+        line-height: 60px;
         color: #55a532;
         border-bottom: 1px solid #55a532;
       }
