@@ -1,15 +1,15 @@
 import router from './setRouter'
-import { oidcRoutes, baseRoutes, indexRoutes, homeRoutes, childRoutes, testRoutes } from './routerPath'
+import { baseRoutes, indexRoutes, homeRoutes, childRoutes, testRoutes } from './routerPath'
 
 // 添加参数，避免多次循环导致的错误
 var getRouters
 
 // 合并当前所有的路由
 const newRouters = (to: any, next: any) => {
-  const routerConfig = oidcRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes).concat(testRoutes)
+  const routerConfig = indexRoutes.concat(homeRoutes).concat(childRoutes).concat(testRoutes).concat(baseRoutes)
   // 因'*'的路由存在baseRoutes里，所以放在最后不会影响其他
   const routerArr = routerConfig.concat(baseRoutes)
-  router.addRoutes(routerArr)
+  router.addRoutes(routerConfig)
   next({ ...to, replace: true })
 }
 
@@ -20,9 +20,7 @@ router.beforeEach((to, from, next) => {
     newRouters(to, next)
   }
 
-  /* if (to.path === '/OidcCallback') {
-    next()
-  } else if (to.path !== '/login' && !localStorage.getItem('token')) {
+  /* if (to.path !== '/login' && !localStorage.getItem('token')) {
     next({
       path: '/login'
     })

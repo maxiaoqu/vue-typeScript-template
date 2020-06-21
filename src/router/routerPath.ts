@@ -5,32 +5,6 @@ import Home from '@/frameSkeleton/layout/home.vue'
 import Child from '@/frameSkeleton/layout/child.vue'
 import Test from '@/frameSkeleton/layout/test.vue'
 
-// Oidc页面路由
-export const oidcRoutes: RouteConfig[] = [
-  {
-    path: '/OidcCallback',
-    name: 'OidcCallback',
-    meta: {
-      title: '单点登录回调页面'
-    },
-    component: () => import('@/frameSkeleton/oidc/OidcCallback.vue')
-  }, {
-    path: '/OidcCallbackError',
-    name: 'OidcCallbackError',
-    meta: {
-      title: '单点登录回调错误'
-    },
-    component: () => import('@/frameSkeleton/oidc/OidcCallbackError.vue')
-  }, {
-    path: '/OidcSilentRenew',
-    name: 'OidcSilentRenew',
-    meta: {
-      title: '单点登录回调'
-    },
-    component: () => import('@/frameSkeleton/oidc/OidcSilentRenew.vue')
-  }
-]
-
 // 基础页面路由
 export const baseRoutes: RouteConfig[] = [
   {
