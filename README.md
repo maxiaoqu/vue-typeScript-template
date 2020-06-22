@@ -14,6 +14,13 @@
 |---|---|---|---|---|---|
 |码小趣|[maxiaoqu](https://github.com/maxiaoqu) |  ![](https://avatars1.githubusercontent.com/u/25891598?s=60&v=4)|http://blog.maxiaoqu.com|http://www.maxiaoqu.com|maxiaoqu@gmail.com
 
+## 主要维护分支
+|人员|分支类型|分支说明|
+|---|---|---|
+|master|[主分支](https://github.com/maxiaoqu/vue-typeScript-template/tree/master) | 该分支是代码最全的分支之一
+|template|[初始化](https://github.com/maxiaoqu/vue-typeScript-template/tree/template) | 该分支是初始化代码框架，只有最基础的配置，无其他乱七八糟的东西
+
+
 ## 使用技术
 - vue
 - vuex
@@ -71,6 +78,9 @@ npm run lint
     ├── APP.vue......................app.vue文件
     └── main.js......................vue相关全局配置
 ```
+
+## 框架使用说明
+- 1、viewTest是使用案例和使用规范，不需要的时候可以进行删除即可（同时删除src/router/routerPath.ts和src/router/index.ts里的testRoutes参数）
 
 ## 框架相关使用案例
 [框架使用案例](./src/viewsTest)
