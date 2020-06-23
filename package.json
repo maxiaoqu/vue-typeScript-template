@@ -11,9 +11,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.3",
-    "echarts": "^4.8.0",
     "oidc-client": "^1.10.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",

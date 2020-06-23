@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <div>Home - {{ isRouteTitle }}</div>
-    <buttom
+    <button
       v-if="isRouteTitle === '首页'"
       @click="gotoHome"
     >
       进入系统
-    </buttom>
+    </button>
   </div>
 </template>
 
