@@ -32,7 +32,7 @@
 
 ## 安装
 ```
-npm installComponent
+npm install
 ```
 
 ## 运行
