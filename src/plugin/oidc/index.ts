@@ -1,7 +1,6 @@
 /**
  * @description: 处理单点登录的问题
  */
-import { User } from 'oidc-client'
 import oidcEvents from './oidcEvents'
 
 export default class OidcService {
