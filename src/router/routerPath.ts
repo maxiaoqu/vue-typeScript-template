@@ -39,8 +39,7 @@ export const baseRoutes: RouteConfig[] = [
     redirect: '/index',
     meta: {
       title: '首页'
-    },
-    component: () => import('@/views/Home.vue')
+    }
   }, {
     path: '/index',
     name: 'index',
@@ -59,21 +58,21 @@ export const baseRoutes: RouteConfig[] = [
     path: '/401',
     name: '401',
     meta: {
-      title: '401'
+      title: 'error401'
     },
     component: () => import('@/frameSkeleton/error/error401.vue')
   }, {
     path: '/403',
     name: '403',
     meta: {
-      title: '403'
+      title: 'error403'
     },
     component: () => import('@/frameSkeleton/error/error403.vue')
   }, {
     path: '*',
     name: '404',
     meta: {
-      title: '404'
+      title: 'error404'
     },
     component: () => import('@/frameSkeleton/error/error404.vue')
   }

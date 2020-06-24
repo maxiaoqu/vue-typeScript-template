@@ -1,5 +1,5 @@
 const nodeEnv = {
-  port: '2048',
+  port: '1024',
   // 数据接口
   dip: {
     target: 'http://server.maxiaoqu.com:6666'
