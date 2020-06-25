@@ -18,10 +18,10 @@ import ErrorPage from '@/frameSkeleton/error/components/errorPage.vue'
   })
 export default class Error401 extends Vue {
     private errorTitle: string = '401'
-    private errorMessage: string = '你访问的页面展示有问题'
+    private errorMessage: string = '您访问的页面未授权'
     private errorInfo: string[] = [
-      '你访问的页面展示有问题',
-      '你访问的页面展示有问题你访问的页'
+      '请与Web服务器的管理员联系，以确认您是否具有访问所请求资源的权限',
+      '请记录试图访问的完整地址，并与Web服务器的管理员联系以确认您是否具有访问所请求资源的权限'
     ]
 }
 </script>

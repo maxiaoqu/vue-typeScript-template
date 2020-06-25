@@ -125,7 +125,7 @@ export default class ErrorPage extends Vue {
       height: 200px;
       width: 380px;
       position: absolute;
-      top: 40%;
+      top: 36%;
       left: 50%;
       margin-top: -100px;
       margin-left: 50px;
