@@ -20,7 +20,7 @@
           style="letter-spacing:0.6"
           fill="grey"
         >
-          进入系统...
+          正在进入系统...
           <animate
             attributeName="opacity"
             values="0;1;0"

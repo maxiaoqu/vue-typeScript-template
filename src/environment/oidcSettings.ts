@@ -9,6 +9,7 @@ const nodeEnvPort = nodeEvnt.port
 * scope: 区别于oauth2授权请求的一点，必须包含有openid这一项,
 * redirect_uri: 是登陆成功后跳转回来的地址
 * post_logout_redirect_uri: OAuth2注销后重定向UR,登出回调链接
+* silent_redirect_uri: 包含处理无提示续订的代码的页面的URL
 * automaticSilentRenew: 为true是启用自动安静刷新token.
 * */
 
@@ -19,8 +20,8 @@ const development = {
   response_type: 'code',
   scope: 'openid profile email api offline_access',
   redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
-  post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
-  silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
+  post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcLogout`,
+  silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcRenew`,
   automaticSilentRenew: true,
   automaticSilentSignin: true
 }
@@ -32,8 +33,8 @@ const production = {
   response_type: 'code',
   scope: 'openid profile email api offline_access',
   redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback`,
-  post_logout_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback`,
-  silent_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback`,
+  post_logout_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcLogout`,
+  silent_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcRenew`,
   automaticSilentRenew: true,
   automaticSilentSignin: true
 }

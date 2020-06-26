@@ -15,19 +15,19 @@ export const oidcRoutes: RouteConfig[] = [
     },
     component: () => import('@/frameSkeleton/oidc/OidcCallback.vue')
   }, {
-    path: '/OidcCallbackError',
-    name: 'OidcCallbackError',
+    path: '/OidcLogout',
+    name: 'OidcLogout',
     meta: {
-      title: '单点登录回调错误'
+      title: '单点退出登录回调'
     },
-    component: () => import('@/frameSkeleton/oidc/OidcCallbackError.vue')
+    component: () => import('@/frameSkeleton/oidc/OidcLogout.vue')
   }, {
-    path: '/OidcSilentRenew',
-    name: 'OidcSilentRenew',
+    path: '/OidcRenew',
+    name: 'OidcRenew',
     meta: {
-      title: '单点登录回调'
+      title: '单点登录其他操作'
     },
-    component: () => import('@/frameSkeleton/oidc/OidcSilentRenew.vue')
+    component: () => import('@/frameSkeleton/oidc/OidcRenew.vue')
   }
 ]
 
