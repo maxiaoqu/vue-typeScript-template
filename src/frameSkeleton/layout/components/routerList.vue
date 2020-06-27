@@ -54,6 +54,7 @@ export default class RouterList extends Vue {
     }
 
     private gotoPage(router: any) {
+      console.log(12312, router.name, router)
       this.$router.push({
         name: router.name
       })
