@@ -20,6 +20,13 @@ intercept.interceptors.request.use((config) => {
   if (config.url.includes('.json') || config.url.includes('.g')) {
     config.baseURL = ''
   }
+  // 判断参数中是否含有'baseURL'，有的话拼接到config.url里去，
+  // 如：config.params.baseURL='getUserinfo/123213123/12123'
+  // 拼接后得到新的config.url = 'api/serverApi/getUserinfo/123213123/12123'
+  if (config.params.baseURL) {
+    config.url = config.url + config.params.baseURL
+    delete config.params.baseURL
+  }
   return config
 }, (error) => {
   return Promise.reject(error)
