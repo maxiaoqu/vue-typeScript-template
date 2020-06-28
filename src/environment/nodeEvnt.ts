@@ -1,3 +1,7 @@
+/**
+ * @description 配置运行环境的相关接口地址，在vue.config.js里的proxy用到
+ */
+
 const nodeEnv = {
   port: '1024',
   // 数据接口

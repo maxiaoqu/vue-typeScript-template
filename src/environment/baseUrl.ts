@@ -1,3 +1,7 @@
+/**
+ * @description 配置线上环境的相关接口地址
+ */
+
 import { isProduction } from '@/environment/process'
 
 // 运行环境【运行后台人员联调环境】----【运行：npm run dev】

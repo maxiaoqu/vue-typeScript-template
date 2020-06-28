@@ -1,3 +1,7 @@
+/**
+ * @description oidc的相关配置
+ */
+
 import { isProduction } from '@/environment/process'
 
 const nodeEvnt = require('@/environment/nodeEvnt.ts')
