@@ -1,5 +1,6 @@
 const consoleInfo = require('./console')
 const isProduction = process.env.NODE_ENV === 'production'
+const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const nodeEvnt = require('./src/environment/nodeEvnt.ts')
 
@@ -46,7 +47,20 @@ module.exports = {
       })
     )
     // 生产环境配置
-    // if (isProduction) {}
+    if (isProduction) {
+      config.optimization.minimizer = [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              warnings: false,
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ['console.log']
+            }
+          }
+        })
+      ]
+    }
   },
   // 使用postcss-pxtorem配合utils/rem将项目中的px转化成rem
   css: {
