@@ -11,6 +11,8 @@ module.exports = {
   filenameHashing: false,
   // 通过链式编程的形式，来修改默认的 webpack 配置
   chainWebpack: config => {
+    // 修复HMR
+    config.resolve.symlinks(true)
     // 生产环境配置
     if (isProduction) {
       // 添加打包分析工具,使用方法：npm run build --report
