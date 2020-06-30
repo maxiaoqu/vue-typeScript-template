@@ -173,12 +173,12 @@ export const testRoutes: RouteConfig[] = [
     redirect: '/testRoutes/UseComponentsNo1',
     component: Test,
     children: [{
-      path: 'UseComponentsNo1',
-      name: 'UseComponentsNo1',
+      path: 'UseComponents',
+      name: 'UseComponents',
       meta: {
         title: '组件使用页面1'
       },
-      component: () => import('@/viewsTest/useComponents-1.vue')
+      component: () => import('@/viewsTest/useComponents.vue')
     }, {
       path: 'UseMixins',
       name: 'UseMixins',
@@ -186,6 +186,13 @@ export const testRoutes: RouteConfig[] = [
         title: 'Mixins方法的使用'
       },
       component: () => import('@/viewsTest/useMixins.vue')
+    }, {
+      path: 'useProps',
+      name: 'useProps',
+      meta: {
+        title: 'Prop传参'
+      },
+      component: () => import('@/viewsTest/useProps.vue')
     }, {
       path: 'UseRequest',
       name: 'UseRequest',

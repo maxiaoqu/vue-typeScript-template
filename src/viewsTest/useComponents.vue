@@ -2,7 +2,7 @@
 说明：使用组件--页面1
 -->
 <template>
-  <div class="UseComponentsNo1">
+  <div class="UseComponents">
     使用组件--页面1
     <MyComponentsNo1 />
   </div>
@@ -10,21 +10,21 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import MyComponentsNo1 from '@/viewsTest/components/myComponents-1.vue'
+import MyComponentsNo1 from '@/viewsTest/components/myComponents.vue'
 
-  @Component<UseComponentsNo1>({
-    name: 'UseComponentsNo1',
+  @Component<UseComponents>({
+    name: 'UseComponents',
     components: {
       MyComponentsNo1
     }
   })
-export default class UseComponentsNo1 extends Vue {
+export default class UseComponents extends Vue {
 
 }
 </script>
 
 <style lang="scss">
-  .UseComponentsNo1 {
+  .UseComponents {
     width: 100%;
     height: 100%;
   }
