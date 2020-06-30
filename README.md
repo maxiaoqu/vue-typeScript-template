@@ -20,6 +20,11 @@
 |master|[主分支](https://github.com/maxiaoqu/vue-typeScript-template/tree/master) | 该分支是代码最全的分支之一
 |template|[初始化](https://github.com/maxiaoqu/vue-typeScript-template/tree/template) | 该分支是初始化代码框架，只有最基础的配置，无其他乱七八糟的东西
 
+## 其他markdown文档
+|文档类型|文档名称|文档说明|
+|---|---|---|
+|更新日志|[CHANGE-LOG](./CHANGE-LOG.md) | 更新日志\重要节点更新文档
+
 
 ## 使用技术
 - vue
