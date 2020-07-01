@@ -9,6 +9,7 @@
       :is-show="isShow"
       :data-arr="dataArr"
       :data-obj="dataObj"
+      @propEmeit="propEmeit($event)"
     />
   </div>
 </template>
@@ -28,6 +29,10 @@ export default class UseRequest extends Vue {
     private dataObj: object = {
       name: '传参-对象',
       class: '传参-对象2'
+    }
+
+    private propEmeit(num: number) {
+      console.log('子组件传过来的参数：', num)
     }
 }
 </script>

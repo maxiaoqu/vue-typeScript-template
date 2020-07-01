@@ -2,7 +2,10 @@
 说明：接参组件书写的案例页面
 -->
 <template>
-  <div class="MyComponentsProps">
+  <div
+    class="MyComponentsProps"
+    @click="propEmeit"
+  >
     我是接参组件
     <h4>{{ title }}</h4>
     <p v-if="isShow">
@@ -32,6 +35,10 @@ export default class MyComponentsProps extends Vue {
       default: () => {
       }
     }) public dataObj!: any
+
+    private propEmeit() {
+      this.$emit('propEmeit', 999)
+    }
 }
 </script>
 
