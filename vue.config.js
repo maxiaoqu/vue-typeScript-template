@@ -48,8 +48,9 @@ module.exports = {
     )
     // 生产环境配置
     if (isProduction) {
-      config.optimization.minimizer = [
+      config.optimization.minimizer.push(
         new TerserPlugin({
+          extractComments: false,
           terserOptions: {
             compress: {
               warnings: false,
@@ -59,7 +60,7 @@ module.exports = {
             }
           }
         })
-      ]
+      )
     }
   },
   // 使用postcss-pxtorem配合utils/rem将项目中的px转化成rem
