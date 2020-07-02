@@ -214,6 +214,13 @@ export const testRoutes: RouteConfig[] = [
         title: '不同页面调去相同方法-2'
       },
       component: () => import('@/viewsTest/useSameMethods-2.vue')
+    }, {
+      path: 'useVuex',
+      name: 'useVuex',
+      meta: {
+        title: 'Vuex使用案例'
+      },
+      component: () => import('@/viewsTest/useVuex.vue')
     }]
   }
 ]
