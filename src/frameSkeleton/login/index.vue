@@ -72,7 +72,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import OidcService from '@/plugin/oidc'
+import { oidcSignIn } from '@/plugin/oidc'
 
   @Component<Login>({
     name: 'Login'
@@ -105,9 +105,8 @@ export default class Login extends Vue {
         this.loginTitle = '正进入登录环境中...'
       }
       let setTimeOutNum = setTimeout(() => {
-        let authService = new OidcService()
         clearTimeout(setTimeOutNum)
-        authService.oidcSignIn()
+        oidcSignIn()
       }, 800)
     }
 }
