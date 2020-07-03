@@ -35,15 +35,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import OidcService from '@/plugin/oidc'
+import { oidcSigninRedirect } from '@/plugin/oidc'
 
   @Component<OidcCallback>({
     name: 'OidcCallback'
   })
 export default class OidcCallback extends Vue {
   mounted() {
-    let authService = new OidcService()
-    authService.oidcSigninRedirect()
+    oidcSigninRedirect()
   }
 }
 </script>
