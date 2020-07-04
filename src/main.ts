@@ -4,14 +4,14 @@ import router from './router'
 import store from './store'
 
 // 全局样式
-import '@/assets/style/index.scss'
+import '@assets/style/index.scss'
 
 // 全局组件、方法注册
-import installComponent from '@/utils/install/installComponent'
-import installPrototype from '@/utils/install/installPrototype'
+import installComponent from '@utils/install/installComponent'
+import installPrototype from '@utils/install/installPrototype'
 
 // 设置根节点，将项目中的px转化成rems
-import '@/utils/rem'
+import '@utils/rem'
 
 Vue.use(installComponent)
 Vue.use(installPrototype)
