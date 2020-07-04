@@ -15,6 +15,7 @@ const newRouters = (to: any, next: any) => {
 
 // 路由跳转之前
 router.beforeEach((to, from, next) => {
+  let token = sessionStorage.getItem('token')
   if (!getRouters) {
     getRouters = true
     newRouters(to, next)
@@ -22,7 +23,7 @@ router.beforeEach((to, from, next) => {
 
   if (to.path === '/OidcCallback') {
     next()
-  } else if (to.path !== '/login' && !localStorage.getItem('token')) {
+  } else if (to.path !== '/login' && !token) {
     next({
       path: '/login'
     })
