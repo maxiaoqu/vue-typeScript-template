@@ -3,6 +3,13 @@ const isProduction = process.env.NODE_ENV === 'production'
 const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const nodeEvnt = require('./src/environment/nodeEvnt.ts')
+const path = require('path')
+
+// 配置webpack目录别名alias
+function resolve(dir) {
+  return path.resolve(__dirname, dir)
+  // return path.join(__dirname, dir)
+}
 
 module.exports = {
   publicPath: './',
@@ -12,6 +19,14 @@ module.exports = {
   filenameHashing: false,
   // 通过链式编程的形式，来修改默认的 webpack 配置
   chainWebpack: config => {
+    // 配置webpack目录别名alias
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('@api', resolve('src/api'))
+      .set('@assets', resolve('src/assets'))
+      .set('@components', resolve('src/components'))
+      .set('@plugin', resolve('src/plugin'))
+      .set('@utils', resolve('src/utils'))
     // 修复HMR
     config.resolve.symlinks(true)
     // 生产环境配置
