@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "strict": false,
-    "noImplicitAny":false,
+    "noImplicitAny": false,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
@@ -19,6 +19,21 @@
       "webpack-env"
     ],
     "paths": {
+      "@api/*": [
+        "src/api/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@plugin/*": [
+        "src/plugin/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
       "@/*": [
         "src/*"
       ]
