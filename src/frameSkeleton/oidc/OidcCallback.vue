@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { oidcSigninRedirect } from '@/plugin/oidc'
+import { oidcSigninRedirect } from '@plugin/oidc'
 
   @Component<OidcCallback>({
     name: 'OidcCallback'

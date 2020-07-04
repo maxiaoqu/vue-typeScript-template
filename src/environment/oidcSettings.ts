@@ -2,9 +2,9 @@
  * @description oidc的相关配置
  */
 
-import { isProduction } from '@/environment/process'
+import { isProduction } from './process'
 
-const nodeEvnt = require('@/environment/nodeEvnt.ts')
+const nodeEvnt = require('./nodeEvnt.ts')
 const nodeEnvPort = nodeEvnt.port
 /*
 * authority: 认证服务器,需要修改为自己的认证服务器
