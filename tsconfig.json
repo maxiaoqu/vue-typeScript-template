@@ -19,6 +19,27 @@
       "webpack-env"
     ],
     "paths": {
+      "@api/*": [
+        "src/api/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@dictionary/*": [
+        "src/dictionary/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@environment/*": [
+        "src/environment/*"
+      ],
+      "@plugin/*": [
+        "src/plugin/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
       "@/*": [
         "src/*"
       ]
