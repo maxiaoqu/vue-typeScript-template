@@ -11,6 +11,18 @@ module.exports = {
   filenameHashing: false,
   // 通过链式编程的形式，来修改默认的 webpack 配置
   chainWebpack: config => {
+    // 配置webpack目录别名alias
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('@api', resolve('src/api'))
+      .set('@assets', resolve('src/assets'))
+      .set('@components', resolve('src/components'))
+      .set('@dictionary', resolve('src/dictionary'))
+      .set('@environment', resolve('src/environment'))
+      .set('@plugin', resolve('src/plugin'))
+      .set('@utils', resolve('src/utils'))
+    // 修复HMR
+    config.resolve.symlinks(true)
     // 生产环境配置
     if (isProduction) {
       // 添加打包分析工具,使用方法：npm run build --report
