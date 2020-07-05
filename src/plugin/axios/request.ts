@@ -35,7 +35,7 @@ export const dataRequest = (action, config, resolve, reject) => {
   axios[method](action, params).then(res => {
     resolve(res)
   }).catch(err => {
-    dealWithError(err)
+    reject(err)
   })
 }
 
@@ -56,6 +56,6 @@ export const fileRequest = (action, configs, resolve, reject) => {
   axios[method](action, param, config).then(res => {
     resolve(res)
   }).catch(err => {
-    dealWithError(err)
+    reject(err)
   })
 }

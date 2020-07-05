@@ -3,28 +3,41 @@
  * @param: {Object}[error]发起请求、接口走error时的相关参数
  * @returns: {Object}返回的一些提示语，有利于排除问题的所在
  */
-const dealWithError = (error) => {
+const dealWithError = (err) => {
   let errorMessage: any = Object.create(null)
-  errorMessage.success = error.state || false
-  let status = 400
+  let requestMessage = err.request
+  let responseMessage = err.response
+  // console.log(222, requestMessage, responseMessage)
+  errorMessage.success = requestMessage.withCredentials || false
+  errorMessage.statusText = responseMessage.statusText
+  errorMessage.date = responseMessage.headers.date
+  let status = responseMessage.status
   switch (status) {
     case 400:
-      errorMessage.data = '请求错误.'
+      errorMessage.message = '请求错误'
       break
     case 401:
-      errorMessage.data = '当前会话已失效,请重新登录.'
+      errorMessage.message = '未授权，请重新登录!'
       break
     case 403:
-      errorMessage.data = '拒绝访问.'
+      errorMessage.message = '拒绝访问'
       break
     case 404:
-      errorMessage.data = '请求地址出错'
+      errorMessage.message = '请求错误，未找到该资源'
+      break
+    case 405:
+      errorMessage.message = '请求方法未允许'
+      break
+    case 408:
+      errorMessage.message = '请求超时'
+      break
+    case 500:
+      errorMessage.message = '服务器端出错'
       break
     default:
-      errorMessage.data = '错误编码' + status
+      errorMessage.message = '错误编码' + status
       break
   }
-  console.error(errorMessage.data)
   return errorMessage
 }
 
