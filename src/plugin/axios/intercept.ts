@@ -16,7 +16,7 @@ intercept.interceptors.request.use((config) => {
   // 除了登陆页和注册页，其他页面都需要携带token
   if (!config.url.includes('/login') || !config.url.includes('/register')) {
     let Token = UserModule.getToken
-    config.headers['Authorization'] = 'Bearer ' + Token
+    config.headers['Authorization'] = Token
   }
   // 判断是否是json文件，是的话baseURL为空
   if (config.url.includes('.json') || config.url.includes('.g')) {
