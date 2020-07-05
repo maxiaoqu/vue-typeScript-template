@@ -25,6 +25,8 @@ module.exports = {
       .set('@api', resolve('src/api'))
       .set('@assets', resolve('src/assets'))
       .set('@components', resolve('src/components'))
+      .set('@dictionary', resolve('src/dictionary'))
+      .set('@environment', resolve('src/environment'))
       .set('@plugin', resolve('src/plugin'))
       .set('@utils', resolve('src/utils'))
     // 修复HMR
