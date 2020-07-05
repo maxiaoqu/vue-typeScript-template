@@ -13,6 +13,7 @@ const intercept = Axios
  * @returns: {Object}接口请求拦截器添加之后返回的参数
  */
 intercept.interceptors.request.use((config) => {
+  config.headers['author'] = 'maxiaoqu.com'
   // 除了登陆页和注册页，其他页面都需要携带token
   if (!config.url.includes('/login') || !config.url.includes('/register')) {
     let Token = UserModule.getToken
@@ -30,8 +31,8 @@ intercept.interceptors.request.use((config) => {
     delete config.params.baseURL
   }
   return config
-}, (error) => {
-  return Promise.reject(error)
+}, (err) => {
+  return Promise.reject(err)
 })
 
 /**
@@ -45,12 +46,12 @@ intercept.interceptors.response.use(res => {
   if (data.data === '') {
     return {
       success: false,
-      data: '暂无数据'
+      message: '暂无数据'
     }
   }
   return data
-}, (error) => {
-  let errorMessage = dealWithError(error)
+}, (err) => {
+  let errorMessage = dealWithError(err)
   return Promise.reject(errorMessage)
 })
 
