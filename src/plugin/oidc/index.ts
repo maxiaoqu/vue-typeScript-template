@@ -21,12 +21,11 @@ export const oidcSignIn = () => {
 
 // 登陆后回调
 export const oidcSigninRedirect = () => {
-  oidcEvents.signinRedirectCallback().then((res) => {
-    if (res.id_token) {
-      sessionStorage.setItem('token', res.id_token)
-      sessionStorage.setItem('user', res.profile.given_name)
+  oidcEvents.signinRedirectCallback().then((user) => {
+    if (user.id_token) {
+      UserModule.setUserInfo(user)
       let setTime = setTimeout(() => {
-        if (res.id_token) {
+        if (user.id_token) {
           clearTimeout(setTime)
           window.location.href = '#/index'
         } else {
@@ -57,13 +56,6 @@ export const oidcSignOut = () => {
   sessionStorage.clear()
   oidcEvents.removeUser().then((reset) => {
     console.log(1121212, reset)
-  }).catch((err) => {
-    console.error(err)
-  })
-
-  oidcEvents.signoutRedirectCallback().then((resp) => {
-    console.log(23232332, resp)
-    window.location.href = '/#/login?type=logout'
   }).catch((err) => {
     console.error(err)
   })

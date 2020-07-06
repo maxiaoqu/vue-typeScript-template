@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { baseRoutes, indexRoutes, homeRoutes, childRoutes, testRoutes } from '@/router/routerPath'
+import { UserModule } from '@/store/modules/user'
 
   @Component<RouterList>({
     name: 'RouterList'
@@ -45,11 +45,27 @@ export default class RouterList extends Vue {
     private routerList: any[] = []
 
     mounted() {
-      this.getRouterList()
+      let _this = this
+      this.$nextTick(() => {
+        _this.getRouterList()
+      })
     }
 
     private getRouterList() {
-      let routerList = baseRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes).concat(testRoutes)
+      let routerList = [{
+        path: '/',
+        name: '_index',
+        redirect: '/index',
+        meta: {
+          icon: 'icon-name',
+          hidden: true,
+          title: '首页'
+        }
+      }]
+      let permissionRouter = UserModule.userPermissionRouter
+      if (permissionRouter) {
+        routerList = routerList.concat(permissionRouter)
+      }
       this.routerList = routerList
     }
 

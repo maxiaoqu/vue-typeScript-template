@@ -1,14 +1,19 @@
 import router from './setRouter'
-import { oidcRoutes, baseRoutes, indexRoutes, homeRoutes, childRoutes, testRoutes } from './routerPath'
+import { oidcRoutes, baseRoutes } from './routerPath'
+import { limitsRouter } from '@/router/limitsRouter'
 
 // 添加参数，避免多次循环导致的错误
 var getRouters
 
 // 合并当前所有的路由
 const newRouters = (to: any, next: any) => {
-  const routerConfig = oidcRoutes.concat(indexRoutes).concat(homeRoutes).concat(childRoutes).concat(testRoutes)
+  let routerConfig: any = []
+  // 获取到权限路由
+  let limitsRouterArr: any = limitsRouter()
+  // 把权限路由加进去
+  routerConfig = oidcRoutes.concat(limitsRouterArr)
   // 因'*'的路由存在baseRoutes里，所以放在最后不会影响其他
-  const routerArr = routerConfig.concat(baseRoutes)
+  let routerArr = routerConfig.concat(baseRoutes)
   router.addRoutes(routerArr)
   next({ ...to, replace: true })
 }

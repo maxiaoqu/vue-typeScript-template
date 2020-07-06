@@ -5,6 +5,7 @@ export interface UserState {
   token: string
   userId: string
   userName: string
+  userPermissionRouter: any[]
 }
 
 /*
@@ -20,6 +21,7 @@ class User extends VuexModule implements UserState {
   public token = ''
   public userId = ''
   public userName = ''
+  public userPermissionRouter = []
 
   // get
   get getToken() {
@@ -37,6 +39,7 @@ class User extends VuexModule implements UserState {
   // mutations
   @Mutation
   private SET_TOKEN(token: string) {
+    sessionStorage.setItem('token', token)
     this.token = token
   }
 
@@ -47,7 +50,13 @@ class User extends VuexModule implements UserState {
 
   @Mutation
   private SET_USERNAME(name: string) {
+    sessionStorage.setItem('user', name || '')
     this.userName = name
+  }
+
+  @Mutation
+  private SET_USERPERMISSIONROUTER(router: any) {
+    this.userPermissionRouter = router
   }
 
   // actions
@@ -58,6 +67,11 @@ class User extends VuexModule implements UserState {
       this.SET_USERNAME(user.profile.given_name)
       this.SET_TOKEN(user.token_type + ' ' + user.access_token)
     }
+  }
+
+  @Action
+  public async setUserPermissionRouter(router: any) {
+    this.SET_USERPERMISSIONROUTER(router)
   }
 }
 

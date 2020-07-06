@@ -103,7 +103,8 @@ export const indexRoutes: RouteConfig[] = [
     name: 'indexRoutes',
     meta: {
       icon: 'icon-name',
-      title: '大屏端风格'
+      title: '大屏端风格',
+      permissionCode: true
     },
     redirect: '/indexRoutes/Admin1',
     component: Index,
@@ -112,7 +113,8 @@ export const indexRoutes: RouteConfig[] = [
       name: 'Admin1',
       meta: {
         icon: 'icon-name',
-        title: '大屏端1'
+        title: '大屏端1',
+        permissionCode: true
       },
       component: () => import('@/views/Admin.vue')
     }, {
@@ -120,7 +122,8 @@ export const indexRoutes: RouteConfig[] = [
       name: 'Home1',
       meta: {
         icon: 'icon-name',
-        title: '大屏端2'
+        title: '大屏端2',
+        permissionCode: true
       },
       component: () => import('@/views/Home.vue')
     }]
@@ -134,7 +137,8 @@ export const homeRoutes: RouteConfig[] = [
     name: 'homeRoutes',
     meta: {
       icon: 'icon-name',
-      title: '后台管理风格'
+      title: '后台管理风格',
+      permissionCode: true
     },
     redirect: '/homeRoutes/Admin2',
     component: Home,
@@ -143,7 +147,8 @@ export const homeRoutes: RouteConfig[] = [
       name: 'Admin2',
       meta: {
         icon: 'icon-name',
-        title: '后台管理系统1'
+        title: '后台管理系统1',
+        permissionCode: true
       },
       component: () => import('@/views/Admin.vue')
     }, {
@@ -151,7 +156,8 @@ export const homeRoutes: RouteConfig[] = [
       name: 'Home2',
       meta: {
         icon: 'icon-name',
-        title: '后台管理系统2'
+        title: '后台管理系统2',
+        permissionCode: true
       },
       component: () => import('@/views/Home.vue')
     }]
@@ -165,7 +171,8 @@ export const childRoutes: RouteConfig[] = [
     name: 'childRoutes',
     meta: {
       icon: 'icon-name',
-      title: '其他风格'
+      title: '其他风格',
+      permissionCode: true
     },
     redirect: '/childRoutes/Admin3',
     component: Child,
@@ -174,7 +181,8 @@ export const childRoutes: RouteConfig[] = [
       name: 'Admin3',
       meta: {
         icon: 'icon-name',
-        title: '其他系统1'
+        title: '其他系统1',
+        permissionCode: true
       },
       component: () => import('@/views/Admin.vue')
     }, {
@@ -182,7 +190,8 @@ export const childRoutes: RouteConfig[] = [
       name: 'Home3',
       meta: {
         icon: 'icon-name',
-        title: '其他系统2'
+        title: '其他系统2',
+        permissionCode: true
       },
       component: () => import('@/views/Home.vue')
     }]
@@ -196,7 +205,8 @@ export const testRoutes: RouteConfig[] = [
     name: 'testRoutes',
     meta: {
       icon: 'icon-name',
-      title: '测试页面风格'
+      title: '测试页面风格',
+      permissionCode: true
     },
     redirect: '/testRoutes/UseComponentsNo1',
     component: Test,
@@ -205,7 +215,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'UseComponents',
       meta: {
         icon: 'icon-name',
-        title: '组件使用页面1'
+        title: '组件使用页面1',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useComponents.vue')
     }, {
@@ -213,7 +224,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'UseMixins',
       meta: {
         icon: 'icon-name',
-        title: 'Mixins方法的使用'
+        title: 'Mixins方法的使用',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useMixins.vue')
     }, {
@@ -221,7 +233,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'useProps',
       meta: {
         icon: 'icon-name',
-        title: 'Prop传参'
+        title: 'Prop传参',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useProps.vue')
     }, {
@@ -229,7 +242,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'UseRequest',
       meta: {
         icon: 'icon-name',
-        title: 'Axios请求方法的使用'
+        title: 'Axios请求方法的使用',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useRequest.vue')
     }, {
@@ -237,7 +251,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'UseSameMethodsNo1',
       meta: {
         icon: 'icon-name',
-        title: '不同页面调去相同方法-1'
+        title: '不同页面调去相同方法-1',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useSameMethods-1.vue')
     }, {
@@ -245,7 +260,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'UseSameMethodsNo2',
       meta: {
         icon: 'icon-name',
-        title: '不同页面调去相同方法-2'
+        title: '不同页面调去相同方法-2',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useSameMethods-2.vue')
     }, {
@@ -253,7 +269,8 @@ export const testRoutes: RouteConfig[] = [
       name: 'useVuex',
       meta: {
         icon: 'icon-name',
-        title: 'Vuex使用案例'
+        title: 'Vuex使用案例',
+        permissionCode: true
       },
       component: () => import('@/viewsTest/useVuex.vue')
     }]

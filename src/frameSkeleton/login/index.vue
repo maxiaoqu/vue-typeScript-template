@@ -78,19 +78,16 @@ import { oidcSignIn } from '@plugin/oidc'
     name: 'Login'
   })
 export default class Login extends Vue {
-    private isLogoutInto: boolean = false
-    private isLoging: boolean = false
-    public loginTitle: string = ''
+    public loginTitle: string = '正在为您检查环境'
 
     mounted() {
-      this.oidcEventsLogin(false)
+      let setTime = setTimeout(() => {
+        this.oidcEventsLogin()
+      }, 5000)
     }
 
-    private oidcEventsLogin(isClick: boolean) {
-      if (isClick) {
-        this.isLoging = true
-        this.loginTitle = '正进入登录环境中...'
-      }
+    private oidcEventsLogin() {
+      this.loginTitle = '正进入登录环境中...'
       let setTimeOutNum = setTimeout(() => {
         clearTimeout(setTimeOutNum)
         oidcSignIn()
