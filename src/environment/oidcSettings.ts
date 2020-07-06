@@ -23,9 +23,9 @@ const development = {
   client_id: 'interactive.public',
   response_type: 'code',
   scope: 'openid profile email api offline_access',
-  redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcCallback`,
-  post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcLogout`,
-  silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/OidcRenew`,
+  redirect_uri: `http://localhost:${nodeEnvPort}/#/oidc-callback`,
+  post_logout_redirect_uri: `http://localhost:${nodeEnvPort}/#/oidc-logout`,
+  silent_redirect_uri: `http://localhost:${nodeEnvPort}/#/oidc-renew`,
   automaticSilentRenew: true,
   automaticSilentSignin: true
 }
@@ -36,9 +36,9 @@ const production = {
   client_id: 'interactive.public',
   response_type: 'code',
   scope: 'openid profile email api offline_access',
-  redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback`,
-  post_logout_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcLogout`,
-  silent_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/OidcRenew`,
+  redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/oidc-callback`,
+  post_logout_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/oidc-logout`,
+  silent_redirect_uri: `http://example.maxiaoqu.com/vuetsdemo/#/oidc-renew`,
   automaticSilentRenew: true,
   automaticSilentSignin: true
 }

@@ -7,8 +7,10 @@ const dealWithError = (err) => {
   let errorMessage: any = Object.create(null)
   let requestMessage = err.request
   let responseMessage = err.response
-  // console.log(222, requestMessage, responseMessage)
+  let configMessage = err.config
   errorMessage.success = requestMessage.withCredentials || false
+  errorMessage.responseURL = requestMessage.responseURL
+  errorMessage.params = configMessage.params
   errorMessage.statusText = responseMessage.statusText
   errorMessage.date = responseMessage.headers.date
   let status = responseMessage.status

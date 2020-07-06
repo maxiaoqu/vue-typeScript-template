@@ -8,23 +8,29 @@ import Test from '@/frameSkeleton/layout/test.vue'
 // Oidc页面路由
 export const oidcRoutes: RouteConfig[] = [
   {
-    path: '/OidcCallback',
-    name: 'OidcCallback',
+    path: '/oidc-callback',
+    name: 'oidc-callback',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '单点登录回调页面'
     },
     component: () => import('@/frameSkeleton/oidc/OidcCallback.vue')
   }, {
-    path: '/OidcLogout',
-    name: 'OidcLogout',
+    path: '/oidc-logout',
+    name: 'oidc-logout',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '单点退出登录回调'
     },
     component: () => import('@/frameSkeleton/oidc/OidcLogout.vue')
   }, {
-    path: '/OidcRenew',
-    name: 'OidcRenew',
+    path: '/oidc-renew',
+    name: 'oidc-renew',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '单点登录其他操作'
     },
     component: () => import('@/frameSkeleton/oidc/OidcRenew.vue')
@@ -38,12 +44,16 @@ export const baseRoutes: RouteConfig[] = [
     name: '_index',
     redirect: '/index',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '首页'
     }
   }, {
     path: '/index',
     name: 'index',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '首页'
     },
     component: () => import('@/views/Home.vue')
@@ -51,6 +61,8 @@ export const baseRoutes: RouteConfig[] = [
     path: '/login',
     name: 'login',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: '登录页'
     },
     component: () => import('@/frameSkeleton/login/index.vue')
@@ -58,6 +70,8 @@ export const baseRoutes: RouteConfig[] = [
     path: '/401',
     name: '401',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: 'error401'
     },
     component: () => import('@/frameSkeleton/error/error401.vue')
@@ -65,6 +79,8 @@ export const baseRoutes: RouteConfig[] = [
     path: '/403',
     name: '403',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: 'error403'
     },
     component: () => import('@/frameSkeleton/error/error403.vue')
@@ -72,6 +88,8 @@ export const baseRoutes: RouteConfig[] = [
     path: '*',
     name: '404',
     meta: {
+      icon: 'icon-name',
+      hidden: true,
       title: 'error404'
     },
     component: () => import('@/frameSkeleton/error/error404.vue')
@@ -84,6 +102,7 @@ export const indexRoutes: RouteConfig[] = [
     path: '/indexRoutes',
     name: 'indexRoutes',
     meta: {
+      icon: 'icon-name',
       title: '大屏端风格'
     },
     redirect: '/indexRoutes/Admin1',
@@ -92,6 +111,7 @@ export const indexRoutes: RouteConfig[] = [
       path: 'Admin1',
       name: 'Admin1',
       meta: {
+        icon: 'icon-name',
         title: '大屏端1'
       },
       component: () => import('@/views/Admin.vue')
@@ -99,6 +119,7 @@ export const indexRoutes: RouteConfig[] = [
       path: 'Home1',
       name: 'Home1',
       meta: {
+        icon: 'icon-name',
         title: '大屏端2'
       },
       component: () => import('@/views/Home.vue')
@@ -112,6 +133,7 @@ export const homeRoutes: RouteConfig[] = [
     path: '/homeRoutes',
     name: 'homeRoutes',
     meta: {
+      icon: 'icon-name',
       title: '后台管理风格'
     },
     redirect: '/homeRoutes/Admin2',
@@ -120,6 +142,7 @@ export const homeRoutes: RouteConfig[] = [
       path: 'Admin2',
       name: 'Admin2',
       meta: {
+        icon: 'icon-name',
         title: '后台管理系统1'
       },
       component: () => import('@/views/Admin.vue')
@@ -127,6 +150,7 @@ export const homeRoutes: RouteConfig[] = [
       path: 'Home2',
       name: 'Home2',
       meta: {
+        icon: 'icon-name',
         title: '后台管理系统2'
       },
       component: () => import('@/views/Home.vue')
@@ -140,6 +164,7 @@ export const childRoutes: RouteConfig[] = [
     path: '/childRoutes',
     name: 'childRoutes',
     meta: {
+      icon: 'icon-name',
       title: '其他风格'
     },
     redirect: '/childRoutes/Admin3',
@@ -148,6 +173,7 @@ export const childRoutes: RouteConfig[] = [
       path: 'Admin3',
       name: 'Admin3',
       meta: {
+        icon: 'icon-name',
         title: '其他系统1'
       },
       component: () => import('@/views/Admin.vue')
@@ -155,6 +181,7 @@ export const childRoutes: RouteConfig[] = [
       path: 'Home3',
       name: 'Home3',
       meta: {
+        icon: 'icon-name',
         title: '其他系统2'
       },
       component: () => import('@/views/Home.vue')
@@ -168,6 +195,7 @@ export const testRoutes: RouteConfig[] = [
     path: '/testRoutes',
     name: 'testRoutes',
     meta: {
+      icon: 'icon-name',
       title: '测试页面风格'
     },
     redirect: '/testRoutes/UseComponentsNo1',
@@ -176,6 +204,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'UseComponents',
       name: 'UseComponents',
       meta: {
+        icon: 'icon-name',
         title: '组件使用页面1'
       },
       component: () => import('@/viewsTest/useComponents.vue')
@@ -183,6 +212,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'UseMixins',
       name: 'UseMixins',
       meta: {
+        icon: 'icon-name',
         title: 'Mixins方法的使用'
       },
       component: () => import('@/viewsTest/useMixins.vue')
@@ -190,6 +220,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'useProps',
       name: 'useProps',
       meta: {
+        icon: 'icon-name',
         title: 'Prop传参'
       },
       component: () => import('@/viewsTest/useProps.vue')
@@ -197,6 +228,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'UseRequest',
       name: 'UseRequest',
       meta: {
+        icon: 'icon-name',
         title: 'Axios请求方法的使用'
       },
       component: () => import('@/viewsTest/useRequest.vue')
@@ -204,6 +236,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'UseSameMethodsNo1',
       name: 'UseSameMethodsNo1',
       meta: {
+        icon: 'icon-name',
         title: '不同页面调去相同方法-1'
       },
       component: () => import('@/viewsTest/useSameMethods-1.vue')
@@ -211,6 +244,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'UseSameMethodsNo2',
       name: 'UseSameMethodsNo2',
       meta: {
+        icon: 'icon-name',
         title: '不同页面调去相同方法-2'
       },
       component: () => import('@/viewsTest/useSameMethods-2.vue')
@@ -218,6 +252,7 @@ export const testRoutes: RouteConfig[] = [
       path: 'useVuex',
       name: 'useVuex',
       meta: {
+        icon: 'icon-name',
         title: 'Vuex使用案例'
       },
       component: () => import('@/viewsTest/useVuex.vue')

@@ -19,6 +19,7 @@ export const oidcSigninRedirect = () => {
   oidcEvents.signinRedirectCallback().then((res) => {
     if (res.id_token) {
       sessionStorage.setItem('token', res.id_token)
+      sessionStorage.setItem('user', res.profile.given_name)
       let setTime = setTimeout(() => {
         if (res.id_token) {
           clearTimeout(setTime)
