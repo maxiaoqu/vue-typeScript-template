@@ -80,23 +80,10 @@ import { oidcSignIn } from '@plugin/oidc'
 export default class Login extends Vue {
     private isLogoutInto: boolean = false
     private isLoging: boolean = false
-    public loginTitle: string = '欢迎使用'
-
-    created() {
-      let loginType = this.$route.query.type
-      if (loginType === 'logout') {
-        this.isLogoutInto = true
-        this.loginTitle = '欢迎使用'
-      } else {
-        this.isLogoutInto = false
-        this.loginTitle = '正在为您检查环境'
-      }
-    }
+    public loginTitle: string = ''
 
     mounted() {
-      if (!this.isLogoutInto) {
-        this.oidcEventsLogin(false)
-      }
+      this.oidcEventsLogin(false)
     }
 
     private oidcEventsLogin(isClick: boolean) {

@@ -21,7 +21,7 @@ router.beforeEach((to, from, next) => {
     newRouters(to, next)
   }
 
-  if (to.path === '/OidcCallback') {
+  if (to.path === '/oidc-callback') {
     next()
   } else if (to.path !== '/login' && !token) {
     next({

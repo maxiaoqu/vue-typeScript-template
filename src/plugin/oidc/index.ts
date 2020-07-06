@@ -6,8 +6,14 @@ import { UserModule } from '@/store/modules/user'
 
 // 到登陆页面
 export const oidcSignIn = () => {
-  oidcEvents.signinRedirect().then(res => {
-    console.info('登录成功', res)
+  oidcEvents.signinRedirect({
+    state: {
+      message: window.location.href,
+      signUpFlag: true
+    },
+    useReplaceToNavigate: true
+  }).then(res => {
+    console.log('登录成功', res)
   }).catch(err => {
     console.error('登录失败', err)
   })
@@ -15,7 +21,6 @@ export const oidcSignIn = () => {
 
 // 登陆后回调
 export const oidcSigninRedirect = () => {
-  let _this = this
   oidcEvents.signinRedirectCallback().then((res) => {
     if (res.id_token) {
       sessionStorage.setItem('token', res.id_token)
@@ -30,11 +35,10 @@ export const oidcSigninRedirect = () => {
         }
       }, 1200)
     } else {
-      _this.oidcSignIn()
+      oidcSignIn()
     }
   }).catch((err) => {
     console.error(err)
-    _this.oidcSignIn()
   })
 }
 
