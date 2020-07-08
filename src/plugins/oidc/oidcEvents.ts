@@ -1,5 +1,5 @@
 import { UserManager } from 'oidc-client'
-import oidcSettings from '@/environment/oidcSettings'
+import oidcSettings from '@environment/oidcSettings'
 
 var oidcEvents = new UserManager(oidcSettings)
 

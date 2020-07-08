@@ -72,7 +72,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { oidcSignIn } from '@plugin/oidc'
+import { oidcSignIn } from '@plugins/oidc'
 
   @Component<Login>({
     name: 'Login'
