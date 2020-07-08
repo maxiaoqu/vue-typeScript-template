@@ -1,4 +1,4 @@
-import { getRequestData } from '../../plugin/axios'
+import { getRequestData } from '@plugins/axios'
 
 // 获取数据
 export const getGuiZhouGeoJson = () => {

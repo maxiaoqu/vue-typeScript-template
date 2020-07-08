@@ -3,7 +3,7 @@
 * Vue.prototype.$key = prototype[key]
 * */
 import baseURL from '@/environment/baseUrl'
-import { comRequestData, comRequestFile } from '@/plugin/axios'
+import { comRequestData, comRequestFile } from '@plugins/axios'
 
 const prototype = {
   baseURL,

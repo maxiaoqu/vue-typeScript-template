@@ -34,8 +34,8 @@
       "@environment/*": [
         "src/environment/*"
       ],
-      "@plugin/*": [
-        "src/plugin/*"
+      "@plugins/*": [
+        "src/plugins/*"
       ],
       "@utils/*": [
         "src/utils/*"
