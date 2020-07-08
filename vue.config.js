@@ -27,7 +27,7 @@ module.exports = {
       .set('@components', resolve('src/components'))
       .set('@dictionary', resolve('src/dictionary'))
       .set('@environment', resolve('src/environment'))
-      .set('@plugin', resolve('src/plugin'))
+      .set('@plugins', resolve('src/plugins'))
       .set('@utils', resolve('src/utils'))
     // 修复HMR
     config.resolve.symlinks(true)

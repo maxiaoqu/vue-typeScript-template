@@ -16,7 +16,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 // 组件内请求
-import { getRequestData } from '@/plugin/axios'
+import { getRequestData } from '@plugins/axios'
 // 调取公共方法请求
 import { getUserInfo } from '@/viewsTest/typescript/request'
 
