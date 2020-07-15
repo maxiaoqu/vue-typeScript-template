@@ -5,6 +5,7 @@
 // axios相关配置【勿动】
 import qs from 'qs'
 import intercept from './intercept'
+import dealWithError from './dealWithError'
 
 // axios引入配置【勿动】
 const axios = intercept
@@ -34,7 +35,7 @@ export const dataRequest = (action, config, resolve, reject) => {
   axios[method](action, params).then(res => {
     resolve(res)
   }).catch(err => {
-    reject(err)
+    dealWithError(err)
   })
 }
 
@@ -55,6 +56,6 @@ export const fileRequest = (action, configs, resolve, reject) => {
   axios[method](action, param, config).then(res => {
     resolve(res)
   }).catch(err => {
-    reject(err)
+    dealWithError(err)
   })
 }

@@ -25,6 +25,7 @@ module.exports = {
       .set('@api', resolve('src/api'))
       .set('@assets', resolve('src/assets'))
       .set('@components', resolve('src/components'))
+      .set('@dictionary', resolve('src/dictionary'))
       .set('@environment', resolve('src/environment'))
       .set('@plugins', resolve('src/plugins'))
       .set('@utils', resolve('src/utils'))
@@ -100,6 +101,22 @@ module.exports = {
     port: nodeEvnt.port,
     host: '0.0.0.0',
     https: false,
-    open: true
+    open: true,
+    proxy: {
+      // 通配【勿动,模拟配置，为了方便联调时的更多的配置】
+      '/maxiaoquServer': {
+        target: 'http://server.maxiaoqu.com/maxiaoquServer',
+        changeOrigin: true,
+        pathRewrite: {
+          '/maxiaoquServer': '/'
+        }
+      },
+
+      // 联调时的跨域【可进行增加和修改】
+      '/userCenter': nodeEvnt.dip,
+
+      // 通用统一验证跨域【只可改IP】
+      '/api': nodeEvnt.dip
+    }
   }
 }

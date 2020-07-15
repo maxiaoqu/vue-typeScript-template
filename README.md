@@ -21,6 +21,11 @@
 |template|[基础模版框架](https://github.com/maxiaoqu/vue-typeScript-template/tree/template) | 该分支是初始化代码框架，只有最基础的配置，无其他乱七八糟的东西
 |template-oidc|[oidc模版框架](https://github.com/maxiaoqu/vue-typeScript-template/tree/template-oidc) | 该分支是oidc的最基础版本（oidc为单点登录）
 
+## 其他markdown文档
+|文档类型|文档名称|文档说明|
+|---|---|---|
+|更新日志|[CHANGE-LOG](./CHANGE-LOG.md) | 更新日志\重要节点更新文档
+
 
 ## 使用技术
 - vue

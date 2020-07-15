@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import ErrorPage from '@/frameSkeleton/error/components/errorPage.vue'
+import ErrorPage from './components/errorPage.vue'
 
   @Component<Error403>({
     name: 'Error403',

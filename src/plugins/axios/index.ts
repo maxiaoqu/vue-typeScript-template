@@ -18,10 +18,10 @@ const zuul = ''
 const chooseRequest = (action, config, resolve, reject, filePath) => {
   // 先判断是否是文件上传
   if (filePath) {
-    console.info('axios-文件操作')
+    console.info('axios文件操作')
     return fileRequest(action, config, resolve, reject)
   } else {
-    console.info('axios-数据操作')
+    console.info('axios数据操作')
     return dataRequest(action, config, resolve, reject)
   }
 }
@@ -83,6 +83,7 @@ export const comRequestData = (config) => {
  */
 export const comRequestFile = (config, filePath) => {
   let action = zuul + config.url
+  filePath = 'asdasdas'
   return new Promise((resolve, reject) => {
     return chooseRequest(action, config, resolve, reject, filePath)
   })

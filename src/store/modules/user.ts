@@ -54,9 +54,9 @@ class User extends VuexModule implements UserState {
   @Action
   public async setUserInfo(user: any) {
     if (user) {
-      this.SET_USERID(user.id)
-      this.SET_USERNAME(user.name)
-      this.SET_TOKEN(user.token)
+      this.SET_USERID(user.profile.sid)
+      this.SET_USERNAME(user.profile.given_name)
+      this.SET_TOKEN(user.token_type + ' ' + user.access_token)
     }
   }
 }

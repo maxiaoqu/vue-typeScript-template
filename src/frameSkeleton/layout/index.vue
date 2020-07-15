@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import RouterList from '@/frameSkeleton/layout/components/routerList.vue'
+import RouterList from './components/routerList.vue'
 
   @Component<Index>({
     name: 'Index',
