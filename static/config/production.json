@@ -1,0 +1,20 @@
+{
+  "Oidc": {
+    "responseType": "code",
+    "authority": "https://demo.identityserver.io/",
+    "clientId": "interactive.public",
+    "redirectUri": "http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback",
+    "silentRedirectUri": "http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback",
+    "postLogoutRedirectUri": "http://example.maxiaoqu.com/vuetsdemo/#/OidcCallback",
+    "scope": "openid profile email api offline_access"
+  },
+  "Api": {
+    "dip": "http://server.maxiaoqu.com:6666",
+    "pip": "http://server.maxiaoqu.com:7777",
+    "wip": "http://server.maxiaoqu.com:8888",
+    "fip": "http://server.maxiaoqu.com:9999"
+  },
+  "BaseConfig": {
+    "sysName": "xxx系统"
+  }
+}
