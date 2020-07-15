@@ -16,6 +16,7 @@ import '@/assets/style/index.scss'
 import installComponent from '@/utils/install/installComponent'
 import installPrototype from '@/utils/install/installPrototype'
 
+// Vue.use的使用
 Vue.use(installComponent)
 Vue.use(installPrototype)
 
