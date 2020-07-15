@@ -2,6 +2,13 @@ const consoleInfo = require('./console')
 const isProduction = process.env.NODE_ENV === 'production'
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const nodeEvnt = require('./src/environment/nodeEvnt.ts')
+const path = require('path')
+
+// 配置webpack目录别名alias
+function resolve(dir) {
+  return path.resolve(__dirname, dir)
+  // return path.join(__dirname, dir)
+}
 
 module.exports = {
   publicPath: './',
