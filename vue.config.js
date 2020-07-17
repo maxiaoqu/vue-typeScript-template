@@ -1,7 +1,15 @@
 const consoleInfo = require('./console')
 const isProduction = process.env.NODE_ENV === 'production'
+const TerserPlugin = require('terser-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const nodeEvnt = require('./src/environment/nodeEvnt.ts')
+const path = require('path')
+
+// 配置webpack目录别名alias
+function resolve(dir) {
+  return path.resolve(__dirname, dir)
+  // return path.join(__dirname, dir)
+}
 
 module.exports = {
   publicPath: './',
@@ -22,7 +30,7 @@ module.exports = {
       .set('@plugins', resolve('src/plugins'))
       .set('@utils', resolve('src/utils'))
     // 修复HMR
-    // config.resolve.symlinks(true)
+    config.resolve.symlinks(true)
     // 生产环境配置
     if (isProduction) {
       // 添加打包分析工具,使用方法：npm run build --report
@@ -56,7 +64,21 @@ module.exports = {
       })
     )
     // 生产环境配置
-    // if (isProduction) {}
+    if (isProduction) {
+      config.optimization.minimizer.push(
+        new TerserPlugin({
+          extractComments: false,
+          terserOptions: {
+            compress: {
+              warnings: false,
+              drop_console: true,
+              drop_debugger: true,
+              pure_funcs: ['console.log']
+            }
+          }
+        })
+      )
+    }
   },
   // 使用postcss-pxtorem配合utils/rem将项目中的px转化成rem
   css: {
