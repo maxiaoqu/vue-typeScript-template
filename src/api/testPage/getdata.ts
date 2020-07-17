@@ -1,10 +1,11 @@
 import vm from '@utils/install/vuePrototype'
 
+let $Api = (window as any).$Api
 // 获取数据
 export const getUserInfo = (param) => {
   let params = param || {}
   const config = {
-    url: vm.$baseURL.dip + '/dataServe/getUserInfo',
+    url: $Api.dip + '/dataServe/getUserInfo',
     data: params,
     method: 'get'
   }
@@ -15,7 +16,7 @@ export const getUserInfo = (param) => {
 export const getFileUpdate = (param, filePath) => {
   let params = param || {}
   const config = {
-    url: vm.$baseURL.fip + '/fileServe/getFileUpdate',
+    url: $Api.fip + '/fileServe/getFileUpdate',
     data: params,
     method: 'get'
   }
